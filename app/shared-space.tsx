@@ -6,6 +6,7 @@ import { useCursors } from "./cursors-context";
 import OtherCursor from "./other-cursor";
 import SelfCursor from "./self-cursor";
 import { Header } from "./components/Header";
+import { Button } from "./components/ui/button";
 
 export default function SharedSpace() {
   const { others, self } = useCursors();
@@ -52,13 +53,7 @@ export default function SharedSpace() {
       </div>
       <div className="max-w-6xl mx-auto w-full min-h-screen">
         <Header />
-        <Header />
-        <Header />
-        <Header />
-        <Header />
-        <Header />
-        <Header />
-        <Header />
+        <Button>Accede con Discord</Button>
       </div>
 
       {Object.keys(others).map((id) => (
