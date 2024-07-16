@@ -89,4 +89,4 @@ If you want to contribute in a simpler way, you can start this project from _Sta
 [tailwind-url]: https://tailwindcss.com/
 [next-badge]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=333
 [react-badge]: https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=333
-[tailwind-badge]: https://img.shields.io/badge/tailwindcss-0F172A?&logo=tailwindcss
+[tailwind-badge]: https://img.shields.io/badge/-Tailwind%20CSS-%231a202c?style=for-the-badge&logo=tailwind-css
