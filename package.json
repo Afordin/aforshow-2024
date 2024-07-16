@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "next": "14.2.5",
     "partysocket": "1.0.1",
