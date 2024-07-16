@@ -10,7 +10,7 @@ Aforshow is a programming event made for developers by developers to give them t
 You can demonstrate your talent by participating giving a talk.
 
 [Figma Design
-](https://www.figma.com/file/oB8OIzcBcSUIBXDmmp46mb/Variety-Designs?type=design&node-id=1203-960&mode=design&t=MtKYUyZD2jwNeTxp-0) · [Report a bug](https://github.com/Afordin/aforshow-2024/issues)
+](https://www.figma.com/design/AbwPBnjj7gh4SPmDVrPktQ/Comuafor-1?node-id=0-1&t=35wTzz3bkeE9Fsyv-1) · [Report a bug](https://github.com/Afordin/aforshow-2024/issues)
 
 </div>
 

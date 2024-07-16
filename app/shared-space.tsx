@@ -6,10 +6,8 @@ import { useCursors } from "./cursors-context";
 import OtherCursor from "./other-cursor";
 import SelfCursor from "./self-cursor";
 import { Header } from "./components/Header";
-import { Button } from "@/components/ui/button";
 
 import { Nav } from "./components/Nav";
-
 
 export default function SharedSpace() {
   const { others, self } = useCursors();
@@ -45,21 +43,18 @@ export default function SharedSpace() {
   const count = Object.keys(others).length + (self ? 1 : 0);
 
   return (
-    <div>
+    <div className="relative text-white">
       <div className="-z-10 absolute top-0 left-0 w-full h-full overflow-clip">
         {count > 0 && (
           <div className="absolute top-4 left-4 pointer-events-none flex items-center">
-            <span className="text-2xl text-white">{count}&times;</span>
+            <span className="text-2xl">{count}&times;</span>
             <span className="text-5xl">🐁</span>
           </div>
         )}
       </div>
-
-
-      <div className="max-w-5xl mx-auto w-full min-h-screen">
+      <div className="max-w-5xl flex flex-col gap-[72px] mx-auto w-full min-h-screen">
         <Nav />
         <Header />
-         <Button>Accede con Discord</Button>
       </div>
 
       {Object.keys(others).map((id) => (

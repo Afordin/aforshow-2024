@@ -8,13 +8,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        caPrimary: "#FC1C37",
+        caSecondary: "#AD40E1",
+        caTextSecondary: "#7A7A7A",
       },
     },
   },
   plugins: [],
 };
+
+//TODO: Poner esto backgroundImage: { waves: "url('/tu/url/a/waves.png')" } }
+
 export default config;
