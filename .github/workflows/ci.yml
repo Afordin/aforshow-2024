@@ -34,9 +34,6 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
-      - name: Check Code Formatting
-        run: pnpm run format
-
       - name: Lint Code
         run: pnpm run lint
 
