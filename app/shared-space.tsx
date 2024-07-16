@@ -8,6 +8,9 @@ import SelfCursor from "./self-cursor";
 import { Header } from "./components/Header";
 import { Button } from "@/components/ui/button";
 
+import { Nav } from "./components/Nav";
+
+
 export default function SharedSpace() {
   const { others, self } = useCursors();
   const [windowDimensions, setWindowDimensions] = useState({
@@ -51,9 +54,12 @@ export default function SharedSpace() {
           </div>
         )}
       </div>
-      <div className="max-w-6xl mx-auto w-full min-h-screen">
+
+
+      <div className="max-w-5xl mx-auto w-full min-h-screen">
+        <Nav />
         <Header />
-        <Button>Accede con Discord</Button>
+         <Button>Accede con Discord</Button>
       </div>
 
       {Object.keys(others).map((id) => (
