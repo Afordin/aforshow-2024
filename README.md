@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AFORSHOW
 
-## Getting Started
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
 
-First, run the development server:
+Aforshow is a programming event made for developers by developers to give them the opportunity to give a talk.
+<br />
+You can demonstrate your talent by participating giving a talk.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+[Figma Design
+](https://www.figma.com/file/oB8OIzcBcSUIBXDmmp46mb/Variety-Designs?type=design&node-id=1203-960&mode=design&t=MtKYUyZD2jwNeTxp-0) · [Report a bug](https://github.com/Afordin/aforshow-2024/issues)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+</div>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<!-- ## Screenshots -->
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<!-- ![image](https://github.com/jarrisondev/hackafor-2/assets/62910118/46a63f8c-4b59-453b-a2fd-d3f12f854673)
 
-## Learn More
+![image](https://github.com/jarrisondev/hackafor-2/assets/62910118/19e32117-2118-4a26-908e-469e3a478755) -->
 
-To learn more about Next.js, take a look at the following resources:
+## Getting started
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. clone or fork this repository
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   ```sh
+   git clone https://github.com/Afordin/aforshow-2024.git
+   ```
 
-## Deploy on Vercel
+2. install dependencies
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   pnpm install
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+3. run the project
+   ```bash
+   pnpm run dev
+   ```
+4. Open your browser and visit
+
+   [http://localhost:3000 🌺](http://localhost:3000)
+
+## Contributing to a project
+
+1. **Cloning a fork:**
+   Click on the [_fork_](https://github.com/Afordin/aforshow-2024/fork) button at the top right corner of the repository to create a copy of the project in your GitHub account.
+2. **Clone the Repository:** Clone your forked repository to your local machine using the command (`git clone <fork URL>`) in your terminal.
+3. **Set upstream branch:** To keep your forked repository updated with the original repository, use the command (`git remote add upstream <repository original URL>`).
+4. **Create branch:** (`git checkout -b feature/some-feature`).
+5. **Stage the changed files:** by using git-add to incrementally "add" changes to the index before using the commit command (`git add <file>`).
+6. **Record changes to the repository:** Create a new commit containing the current contents of the index and the given log message describing the changes(`git commit -m 'Add: some feature'`).
+7. **Submit your Contribution:** Upload your branch with the changes to forked repository on GitHub using (`git push origin feature/some-feature`).
+8. **Generate a request:** To complete the process of creating your PR, simply hit [_pull request_](https://github.com/Afordin/aforshow-2024/pulls)
+
+## Authors
+
+<a href="https://github.com/afordigital">
+   <img width="50px" src="https://avatars.githubusercontent.com/u/43246362?v=4" />
+</a>
+
+### Contribution from Stackblitz
+
+If you want to contribute in a simpler way, you can start this project from _Stackblitz_ using your GitHub account:
+
+[![Open in Stackblitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/Afordin/aforshow-2024)
+
+**Thanks to all the contributors who have made this project possible!**
+
+[![Contributors](https://contrib.rocks/image?repo=Afordin/aforshow-2024)](https://github.com/Afordin/aforshow-2024/graphs/contributors)
+
+## 🛠️ Stack
+
+[![Next][next-badge]][next-url]
+[![React][react-badge]][react-url]
+[![Tailwind][tailwind-badge]][tailwind-url]
+
+[contributors-shield]: https://img.shields.io/github/contributors/Afordin/aforshow-2024.svg?style=for-the-badge
+[contributors-url]: https://github.com/Afordin/aforshow-2024/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Afordin/aforshow-2024.svg?style=for-the-badge
+[forks-url]: https://github.com/Afordin/aforshow-2024/network/members
+[stars-shield]: https://img.shields.io/github/stars/Afordin/aforshow-2024.svg?style=for-the-badge
+[stars-url]: https://github.com/Afordin/aforshow-2024/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Afordin/aforshow-2024.svg?style=for-the-badge
+[issues-url]: https://github.com/Afordin/aforshow-2024/issues
+[next-url]: https://nextjs.org/
+[react-url]: https://reactjs.org/
+[tailwind-url]: https://tailwindcss.com/
+[next-badge]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=333
+[react-badge]: https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=333
+[tailwind-badge]: https://img.shields.io/badge/tailwindcss-0F172A?&logo=tailwindcss
