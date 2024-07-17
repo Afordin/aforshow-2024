@@ -1,3 +1,4 @@
+import twemoji from "twemoji";
 import { useCursors } from "./cursors-context";
 
 // NOTE
@@ -35,7 +36,12 @@ export default function OtherCursor(props: {
   const left = cursor.x * windowDimensions.width - offset;
   const top = cursor.y * windowDimensions.height - offset;
 
-  const flag = cursor.country ? `${getFlagEmoji(cursor.country)} ` : "";
+  const flag = cursor.country ? getFlagEmoji(cursor.country): "";
+
+  const flagAsImage = twemoji.parse(flag, 
+  { base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/', 
+  })
+
 
   const pointer = cursor.pointer ?? "mouse";
 
@@ -81,10 +87,10 @@ export default function OtherCursor(props: {
         </svg>
       )}
       <div
-        className="absolute text-2xl whitespace-nowrap p-1"
+        className="absolute text-2xl whitespace-nowrap p-1 ml-1 mt-1 w-7"
         style={{ top: 10, left: 16 }}
+        dangerouslySetInnerHTML={{ __html: flagAsImage }}
       >
-        {flag}
       </div>
     </div>
   );
