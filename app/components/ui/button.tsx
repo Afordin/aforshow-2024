@@ -8,18 +8,26 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: [
-          "bg-gradient-to-br from-[#FC1C37] to-[#AD40E1] text-white",
-          "hover:text-cBlack hover:to-100%",
+          "bg-gradient-to-br from-caPrimary-500 via-caSecondary-500 to-white text-caWhite",
+          "hover:text-caBlack",
+          "buttonBgTransition",
         ],
         secondary: [
-          "text-white",
-          "bg-gradient-to-rb bg-gradient-to-rb from-black via-[#331e22] to-[#2c2130]",
+          "bg-gradient-to-br from-black via-[#331e22] to-[#2c2130] text-white",
           "from-100% hover:from-0%",
+          "buttonBgTransition",
         ],
+        twitch: [
+          "bg-gradient-to-br from-[#4b2a88] via-[#7b4dda] to-[#2e195c] text-white",
+          "buttonBgTransition",
+        ]
       },
       size: {
-        default: "h-10 px-8",
-        sm: "h-8  px-3 text-xs",
+        default: "py-2 px-8 text-sm h-10",
+        xs: "py-1 px-3 text-xs h-6",
+        sm: "py-1.5 px-4 text-sm h-8",
+        lg: "py-3 px-6 text-base h-12",
+        xl: "py-3 px-6 text-lg h-14",
       },
     },
     defaultVariants: {

@@ -23,12 +23,19 @@ export const Header = () => {
             </span>
           </p>
         </div>
-        <div className="flex gap-[64px]">
-          <Countdown />
-        </div>
+
+
+        {/* Wrapper was moved to countdown because its component logic, could be override by className prop */}
+        <Countdown startFrom={new Date("2024-08-30")} />
+
         <div className="flex gap-6">
-          <Button>Inscribirse</Button>
-          <Button variant="secondary">Comunidad</Button>
+          <Button size="xl">Inscribirse</Button>
+          <Button variant="secondary" size="xl">
+            Comunidad Sec
+          </Button>
+          <Button variant="twitch" size="xl">
+            Comunidad
+          </Button>
         </div>
       </div>
     </header>
