@@ -1,6 +1,15 @@
 import { useEffect, useLayoutEffect, useState } from "react";
+import { cn } from "../utils";
 
-export const Countdown = () => {
+interface CountDownProps {
+  className?: string;
+  startFrom?: Date;
+}
+
+export const Countdown = ({
+  className,
+  startFrom
+}: CountDownProps) => {
   const time = [
     {
       key: "days",
@@ -28,7 +37,7 @@ export const Countdown = () => {
   });
 
   const updateCountdown = () => {
-    const countdownDate = new Date("2024-08-30");
+    const countdownDate = startFrom || new Date();
     const now = new Date();
 
     const timeDifference = countdownDate.getTime() - now.getTime();
@@ -55,8 +64,11 @@ export const Countdown = () => {
     return number < 10 ? `0${number}` : number;
   };
 
+  /* gap-16 =  64px */
+  /* Use cn to override the wraper if need it */
+
   return (
-    <>
+    <div className={cn("flex gap-16", className)}>
       {time.map(({ key, label }, index) => (
         <section key={index} className="text-center text-shadow-sm">
           <span className="font-bold text-3xl xl:text-6xl">
@@ -65,6 +77,6 @@ export const Countdown = () => {
           <p className="text-lg xl:text-2xl">{label}</p>
         </section>
       ))}
-    </>
+    </div>
   );
 };
