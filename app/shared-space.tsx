@@ -5,9 +5,10 @@ import { useEffect, useState } from "react";
 import { useCursors } from "./cursors-context";
 import OtherCursor from "./other-cursor";
 import SelfCursor from "./self-cursor";
-import { Header } from "./components/Header";
+import { WelcomeHero } from "./components/WelcomeHero";
 
 import { Nav } from "./components/Nav";
+import { Contributors } from "./components/common/Contributors";
 
 export default function SharedSpace() {
   const { others, self } = useCursors();
@@ -41,7 +42,7 @@ export default function SharedSpace() {
   const count = Object.keys(others).length + (self ? 1 : 0);
 
   return (
-    <div className="relative text-white">
+    <div className="flex flex-col gap-[72px]  min-h-screen overflow-hidden select-none pt-4">
       <div className="-z-10 absolute top-0 left-0 w-full h-full overflow-clip">
         {count > 0 && (
           <div className="absolute top-4 left-4 pointer-events-none flex items-center">
@@ -50,9 +51,18 @@ export default function SharedSpace() {
           </div>
         )}
       </div>
-      <div className="max-w-5xl flex flex-col gap-[72px] mx-auto w-full min-h-screen">
+
+      <div className="bg-pattern relative">
         <Nav />
-        <Header />
+
+        <WelcomeHero />
+
+
+        {/* Add the others sections here, the patter will grow with that space */}
+        {/* Evento sponsorizado gracias a */}
+
+        <Contributors />
+
       </div>
 
       {Object.keys(others).map((id) => (

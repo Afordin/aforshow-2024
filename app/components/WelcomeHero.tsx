@@ -1,15 +1,10 @@
 import { Countdown } from "./common/Countdown";
 import { Button } from "./ui/button";
 
-export const Header = () => {
+export const WelcomeHero = () => {
   return (
-    <header className=" mx-auto max-w-6xl w-full h-full">
-      <div
-        className="absolute z-10 left-0 right-0 bottom-0 top-0 m-auto"
-        style={{
-          backgroundImage: "url('/waves.svg')",
-        }}
-      ></div>
+    <section className=" mx-auto max-w-6xl w-full h-full">
+      
       <div className="relative z-20 flex flex-col gap-12 items-center text-center">
         <div className="flex flex-col ">
           <h2 className="text-caTextSecondary text-[24px]">
@@ -38,6 +33,6 @@ export const Header = () => {
           </Button>
         </div>
       </div>
-    </header>
+    </section>
   );
 };
