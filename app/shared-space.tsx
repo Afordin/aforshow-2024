@@ -52,11 +52,10 @@ export default function SharedSpace() {
         )}
       </div>
 
-      <div className="bg-pattern relative">
+      <div className="bg-pattern relative gap-[74px] flex flex-col">
         <Nav />
 
         <WelcomeHero />
-
 
         {/* Add the others sections here, the patter will grow with that space */}
         {/* Evento sponsorizado gracias a */}
