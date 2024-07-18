@@ -43,7 +43,7 @@ export default function SharedSpace() {
 
   return (
     <div className="flex flex-col gap-[72px]  min-h-screen overflow-hidden select-none pt-4">
-      <div className="-z-10 absolute top-0 left-0 w-full h-full overflow-clip">
+      <div className="z-10 absolute top-0 left-0 w-full h-full overflow-clip">
         {count > 0 && (
           <div className="absolute top-4 left-4 pointer-events-none flex items-center">
             <span className="text-2xl">{count}&times;</span>
