@@ -1,0 +1,45 @@
+{
+  "version": 1.0,
+  "atDirectives": [
+    {
+      "name": "@tailwind",
+      "description": "Use the `@tailwind` directive to insert Tailwind's `base`, `components`, `utilities` and `screens` styles into your CSS.",
+      "references": [
+        {
+          "name": "Tailwind Documentation — Functions and directives",
+          "url": "https://tailwindcss.com/docs/functions-and-directives#tailwind"
+        }
+      ]
+    },
+    {
+      "name": "@layer",
+      "description": "Use the `@layer` directive to tell Tailwind which “bucket” a set of custom styles belong to. Valid layers are `base`, `components`, and `utilities`.",
+      "references": [
+        {
+          "name": "Tailwind Documentation — Functions and directives",
+          "url": "https://tailwindcss.com/docs/functions-and-directives#layer"
+        }
+      ]
+    },
+    {
+      "name": "@apply",
+      "description": "Use `@apply` to inline any existing utility classes into your own custom CSS.",
+      "references": [
+        {
+          "name": "Tailwind Documentation — Functions and directives",
+          "url": "https://tailwindcss.com/docs/functions-and-directives#apply"
+        }
+      ]
+    },
+    {
+      "name": "@config",
+      "description": "Use the `@config` directive to specify which config file Tailwind should use when compiling that CSS file. This is useful for projects that need to use different configuration files for different CSS entry points.",
+      "references": [
+        {
+          "name": "Tailwind Documentation — Functions and directives",
+          "url": "https://tailwindcss.com/docs/functions-and-directives#config"
+        }
+      ]
+    }
+  ]
+}
