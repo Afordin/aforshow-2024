@@ -15,6 +15,7 @@ const config: Config = {
         caGray: "#737373",
         caDisabled: "#616161",
         caBorder: "#51546E",
+        caBlurBoxes: "#E2276D",
         caWhite: "#FAFAFA",
         caBlack: "#0A0A0A",
         pBorder: "#262626",

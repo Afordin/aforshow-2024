@@ -1,6 +1,7 @@
 import SharedSpace from "./shared-space";
 import CursorsContextProvider from "./cursors-context";
 import { Contributors } from "./components/common/Contributors";
+import { Divider } from "./components/common/Divider";
 
 export default function Home({
   searchParams,
@@ -22,6 +23,7 @@ export default function Home({
     <main>
       <CursorsContextProvider room={room} host={host}>
         <SharedSpace />
+        <Divider />
         <Contributors />
       </CursorsContextProvider>
     </main>

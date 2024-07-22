@@ -3,8 +3,7 @@ import { Button } from "./ui/button";
 
 export const WelcomeHero = () => {
   return (
-    <section className=" mx-auto max-w-6xl w-full h-full">
-      
+    <section className="mx-auto max-w-6xl w-full h-full">
       <div className="relative z-20 flex flex-col gap-12 items-center text-center">
         <div className="flex flex-col ">
           <h2 className="text-caTextSecondary text-[24px]">
@@ -19,16 +18,13 @@ export const WelcomeHero = () => {
           </p>
         </div>
 
-
         {/* Wrapper was moved to countdown because its component logic, could be override by className prop */}
         <Countdown startFrom={new Date("2024-08-30")} />
 
-        <div className="flex gap-6">
+        <div className="flex gap-6 pb-12">
           <Button size="xl">Inscribirse</Button>
+
           <Button variant="secondary" size="xl">
-            Comunidad Sec
-          </Button>
-          <Button variant="twitch" size="xl">
             Comunidad
           </Button>
         </div>
