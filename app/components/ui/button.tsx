@@ -14,9 +14,8 @@ const buttonVariants = cva(
         ],
         secondary: [
           "bg-gradient-to-br from-black via-[#331e22] to-[#2c2130] text-white",
-          "bg-gradient-to-br from-caPrimary-500 via-caSecondary-500 to-white text-caWhite",
           "from-100% hover:from-0%",
-          "buttonBgTransition"
+          "buttonBgTransition",
         ],
         twitch: [
           "bg-gradient-to-br from-[#4b2a88] via-[#7b4dda] to-[#2e195c] text-white",
@@ -44,26 +43,11 @@ export interface ButtonProps
     VariantProps<typeof buttonVariants> {}
 
 const Button = ({ className, variant, size, ...props }: ButtonProps) => {
-  // Crear una clase adicional para la variante secondary con padding específico
-  const additionalStyles = variant === "secondary" ? {
-    paddingLeft: 2,
-    paddingRight: 2,
-  } : {};
-
   return (
     <button
       className={cn(buttonVariants({ variant, size, className }))}
-      style={{...additionalStyles}}
       {...props}
-    >
-      {variant === 'secondary' ? (
-        <span className="text-white bg-gradient-to-rb bg-black from-black via-[#331e22] to-[#2c2130] from-100% hover:from-0% rounded-full buttonBgTransition text-lg font-semibold inline-block transition-all duration-300 ease-in-out py-3 px-3">
-          {props.children}
-        </span>
-      ) : (
-        <>{props.children}</>
-      )}
-    </button>
+    />
   );
 };
 
