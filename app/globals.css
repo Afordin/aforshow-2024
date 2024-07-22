@@ -12,3 +12,71 @@ html {
     @apply bg-pos-0 hover:bg-pos-100 bg-size-200 transition-all duration-300;
   }
 }
+
+@layer utilities {
+  .contributors {
+    /* NOTE: The contributor-count should increase as the number of contributors increases */
+    --contributor-count: 17;
+    --contributor-size: 3.125rem;
+    --column-size: calc(var(--contributor-size) / 1.5);
+
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(var(--contributor-count), var(--column-size));
+    transition: 500ms;
+    transition-delay: 500ms;
+
+    padding-inline: 2rem;
+    padding-block: 2rem;
+
+    /* Hide scrollbar */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .contributors:hover {
+    --column-size: calc(var(--contributor-size) * 1);
+    transition-delay: 0ms;
+  }
+
+  .contributors::-webkit-scrollbar {
+    display: none;
+  }
+
+  .contributor {
+    overflow: hidden;
+    border-radius: 100svw;
+    transition: scale 500ms;
+    border: 0.125rem solid white;
+    width: var(--contributor-size);
+    box-shadow: 0.25rem 0.25rem 0.5rem hsl(0 0% 0% / 0.2);
+  }
+  
+  .contributor:hover {
+    scale: 1.8;
+    z-index: 2;
+  }
+
+  @supports selector(:has(+ *)) {
+    .contributor:hover + .contributor,
+    .contributor:has(+ .contributor:hover) {
+      scale: 1.1;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .contributors {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 0.5rem;
+    }
+
+    @supports selector(:has(+ *)) {
+      .contributor:hover,
+      .contributor:hover+.contributor,
+      .contributor:has(+ .contributor:hover) {
+        scale: 1;
+      }
+    }
+  }
+}
