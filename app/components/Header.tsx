@@ -18,7 +18,7 @@ export const Header = () => {
           <p className="text-6xl font-semibold">
             Da tu primera charla de programación y aporta valor a la comunidad
             en el{" "}
-            <span className="inline-block bg-gradient-to-r from-caPrimary to-caSecondary text-transparent bg-clip-text">
+            <span className="inline-block bg-gradient-to-r from-caPrimary-500 to-caSecondary-500 text-transparent bg-clip-text">
               Aforshow
             </span>
           </p>
