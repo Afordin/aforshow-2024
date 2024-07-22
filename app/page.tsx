@@ -19,13 +19,11 @@ export default function Home({
       : "voronoi-party.genmon.partykit.dev";
 
   return (
-    <>
-      <main className="flex flex-col gap-4 min-h-screen p-6 overflow-hidden select-none">
-        <CursorsContextProvider room={room} host={host}>
-          <SharedSpace />
-        </CursorsContextProvider>
-      </main>
-      <Contributors />
-    </>
+    <main>
+      <CursorsContextProvider room={room} host={host}>
+        <SharedSpace />
+        <Contributors />
+      </CursorsContextProvider>
+    </main>
   );
 }
