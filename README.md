@@ -16,9 +16,9 @@ You can demonstrate your talent by participating giving a talk.
 
 <!-- ## Screenshots -->
 
-<!-- ![image](https://github.com/jarrisondev/hackafor-2/assets/62910118/46a63f8c-4b59-453b-a2fd-d3f12f854673)
+ ![image](./public/principal-capture.png)
 
-![image](https://github.com/jarrisondev/hackafor-2/assets/62910118/19e32117-2118-4a26-908e-469e3a478755) -->
+<!-- ![image](https://github.com/jarrisondev/hackafor-2/assets/62910118/19e32117-2118-4a26-908e-469e3a478755)  -->
 
 ## Getting started
 
