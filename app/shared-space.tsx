@@ -59,9 +59,6 @@ export default function SharedSpace() {
 
         {/* Add the others sections here, the patter will grow with that space */}
         {/* Evento sponsorizado gracias a */}
-
-        <Contributors />
-
       </div>
 
       {Object.keys(others).map((id) => (
