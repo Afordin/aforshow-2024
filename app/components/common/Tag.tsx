@@ -4,10 +4,8 @@ type TagProps = {
 
 export const Tag = ({ children }: TagProps) => {
   return (
-    <div className="bg-gradient-to-br from-caPrimary-500/50 to-caSecondary-500 text-white font-semibold rounded-full p-1">
-      <span className="flex w-full bg-gray-900 text-white rounded-full px-4 p-2">
-        {children}
-      </span>
+    <div className="gradiant-tag relative rounded-full bg-gradient-to-br from-caPrimary-500/20 to-caSecondary-500/20 p-2 px-4">
+      {children}
     </div>
   );
 };

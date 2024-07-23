@@ -53,7 +53,8 @@ export default function SharedSpace() {
 
       <div className="bg-caBlurBoxes absolute left-[-100px] top-80 h-[200px] w-[200px] blur-[200px] sm:h-[300px] sm:w-[300px]"></div>
       <div className="bg-pattern relative flex w-full flex-col gap-[74px] overflow-hidden px-2 pt-4">
-      <div className="bg-caBlurBoxes absolute right-[-100px] top-20 h-[200px] w-[200px] blur-[200px] sm:h-[300px] sm:w-[300px]"></div>
+        <div className="w-full absolute -bottom-20 h-[200px]"></div>
+        <div className="bg-caBlurBoxes absolute right-[-100px] top-20 h-[400px] w-[200px] blur-[200px] sm:h-[300px] sm:w-[300px]"></div>
         <Nav />
         <WelcomeHero />
 

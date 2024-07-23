@@ -6,7 +6,7 @@ export const Schedule = () => {
       <h2 className="text-center font-semibold text-[56px]">
         Horarios y charlas
       </h2>
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-16">
         <Talk
           title="De Junior a Líder"
           author="José Manuel Ortega Falcón"
@@ -15,29 +15,29 @@ export const Schedule = () => {
           alt="contributor 1"
         />
         <Talk
-          title="De Junior a Líder"
-          author="José Manuel Ortega Falcón"
+          title="Mi Experiencia como Desarrollador Junior en Latinoamérica: ¿Un Viaje hacia el Éxito?"
+          author="Edgar Mejia Vásquez"
           hour="20.00h"
           img="/imgs/ikurotime.png"
           alt="contributor 1"
         />
         <Talk
-          title="De Junior a Líder"
-          author="José Manuel Ortega Falcón"
+          title="El camino menos transitado: Cómo llegué al sector IT a los 35 añazos"
+          author="David Rodríguez - Xerosec"
           hour="20.00h"
           img="/imgs/ikurotime.png"
           alt="contributor 1"
         />
         <Talk
-          title="De Junior a Líder"
-          author="José Manuel Ortega Falcón"
+          title="Magical girls UI: los secretos de la animación en Figma"
+          author="Anaís Fernández Vilar"
           hour="20.00h"
           img="/imgs/ikurotime.png"
           alt="contributor 1"
         />
         <Talk
-          title="De Junior a Líder"
-          author="José Manuel Ortega Falcón"
+          title="Sobrevivir al Código - Guía para programadores impacientes"
+          author="David Huertas - Ikurotime"
           hour="20.00h"
           img="/imgs/ikurotime.png"
           alt="contributor 1"

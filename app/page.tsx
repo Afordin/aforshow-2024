@@ -21,7 +21,7 @@ export default function Home({
       : "voronoi-party.genmon.partykit.dev";
 
   return (
-    <main>
+    <main className="font-dmSans">
       <CursorsContextProvider room={room} host={host}>
         <SharedSpace />
         <section className="flex flex-col gap-[72px]">
