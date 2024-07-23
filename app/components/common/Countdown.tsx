@@ -6,10 +6,7 @@ interface CountDownProps {
   startFrom?: Date;
 }
 
-export const Countdown = ({
-  className,
-  startFrom
-}: CountDownProps) => {
+export const Countdown = ({ className, startFrom }: CountDownProps) => {
   const time = [
     {
       key: "days",
