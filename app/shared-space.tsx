@@ -41,7 +41,7 @@ export default function SharedSpace() {
   const count = Object.keys(others).length + (self ? 1 : 0);
 
   return (
-    <div className="flex flex-col gap-[72px] min-h-screen overflow-hidden pt-4">
+    <div className="flex min-h-screen flex-col gap-[72px] overflow-hidden">
       <div className="z-10 absolute pointer-events-none top-0 left-0 w-full h-full overflow-clip">
         {count > 0 && (
           <div className="absolute top-4 left-4 pointer-events-none flex items-center">
@@ -51,9 +51,9 @@ export default function SharedSpace() {
         )}
       </div>
 
-      <div className="w-[300px] h-[300px] bg-caBlurBoxes absolute blur-[200px] left-[-100px] top-80"></div>
-      <div className="w-[300px] h-[300px] bg-caBlurBoxes absolute blur-[200px] right-[-100px] top-20"></div>
-      <div className="bg-pattern overflow-hidden relative gap-[74px] flex flex-col">
+      <div className="bg-caBlurBoxes absolute left-[-100px] top-80 h-[200px] w-[200px] blur-[200px] sm:h-[300px] sm:w-[300px]"></div>
+      <div className="bg-pattern relative flex w-full flex-col gap-[74px] overflow-hidden px-2 pt-4">
+      <div className="bg-caBlurBoxes absolute right-[-100px] top-20 h-[200px] w-[200px] blur-[200px] sm:h-[300px] sm:w-[300px]"></div>
         <Nav />
         <WelcomeHero />
 

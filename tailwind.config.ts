@@ -53,6 +53,9 @@ const config: Config = {
         "pos-0": "0% 0%",
         "pos-100": "100% 100%",
       },
+      fontSize: {
+        hero: ['clamp(1.5rem, 5.5vw, 3.75rem)', '1.1'],
+      },
     },
   },
   variants: {
