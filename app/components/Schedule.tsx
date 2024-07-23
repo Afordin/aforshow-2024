@@ -2,8 +2,8 @@ import { Talk } from "./common/Talk";
 
 export const Schedule = () => {
   return (
-    <section className="w-full mx-auto max-w-6xl">
-      <h2 className="text-center font-semibold text-[56px]">
+    <section className="w-56 md:w-11/12 mx-auto max-w-6xl">
+      <h2 className="text-center font-semibold text-[56px] text-hero mb-20">
         Horarios y charlas
       </h2>
       <div className="flex flex-col gap-16">
