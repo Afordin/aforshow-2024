@@ -1,6 +1,8 @@
 import SharedSpace from "./shared-space";
 import CursorsContextProvider from "./cursors-context";
 import { Contributors } from "./components/common/Contributors";
+import { Divider } from "./components/common/Divider";
+import { Schedule } from "./components/Schedule";
 
 export default function Home({
   searchParams,
@@ -19,13 +21,16 @@ export default function Home({
       : "voronoi-party.genmon.partykit.dev";
 
   return (
-    <>
-      <main className="flex flex-col gap-4 min-h-screen p-6 overflow-hidden select-none">
-        <CursorsContextProvider room={room} host={host}>
-          <SharedSpace />
-        </CursorsContextProvider>
-      </main>
-      <Contributors />
-    </>
+    <main className="font-dmSans">
+      <CursorsContextProvider room={room} host={host}>
+        <SharedSpace />
+        <section className="flex flex-col gap-[72px]">
+          <Divider />
+          <Schedule />
+          <Divider />
+          <Contributors />
+        </section>
+      </CursorsContextProvider>
+    </main>
   );
 }

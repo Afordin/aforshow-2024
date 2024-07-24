@@ -15,6 +15,7 @@ const config: Config = {
         caGray: "#737373",
         caDisabled: "#616161",
         caBorder: "#51546E",
+        caBlurBoxes: "#E2276D",
         caWhite: "#FAFAFA",
         caBlack: "#0A0A0A",
         pBorder: "#262626",
@@ -51,6 +52,9 @@ const config: Config = {
       backgroundPosition: {
         "pos-0": "0% 0%",
         "pos-100": "100% 100%",
+      },
+      fontSize: {
+        hero: ['clamp(1.5rem, 5.5vw, 3.75rem)', '1.1'],
       },
     },
   },
