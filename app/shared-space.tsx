@@ -8,6 +8,7 @@ import SelfCursor from "./self-cursor";
 import { WelcomeHero } from "./components/WelcomeHero";
 
 import { Nav } from "./components/Nav";
+import { Sponsors } from "./components/Sponsors";
 
 export default function SharedSpace() {
   const { others, self } = useCursors();
@@ -57,9 +58,7 @@ export default function SharedSpace() {
         <div className="bg-caBlurBoxes absolute right-[-100px] top-20 h-[400px] w-[200px] blur-[200px] sm:h-[300px] sm:w-[300px]"></div>
         <Nav />
         <WelcomeHero />
-
-        {/* Add the others sections here, the patter will grow with that space */}
-        {/* Evento sponsorizado gracias a */}
+        <Sponsors />
       </div>
 
       {Object.keys(others).map((id) => (
