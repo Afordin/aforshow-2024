@@ -3,6 +3,7 @@ import CursorsContextProvider from "./cursors-context";
 import { Contributors } from "./components/common/Contributors";
 import { Divider } from "./components/common/Divider";
 import { Schedule } from "./components/Schedule";
+import { FAQ } from "./components/FAQ";
 
 export default function Home({
   searchParams,
@@ -28,6 +29,7 @@ export default function Home({
           <Divider />
           <Schedule />
           <Divider />
+          <FAQ />
           <Contributors />
         </section>
       </CursorsContextProvider>
