@@ -13,12 +13,30 @@ const questions = [
     ),
   },
   {
-    title: "¿Donde puedo ver el evento?",
+    title: "¿Tengo que estar suscrito al canal para verlo?",
     description: (
       <p className="text-xl font-semibold text-white">
-        El evento será totalmente gratuito y realizará en{" "}
-        <a className="underline" href="https://www.twitch.tv/afor_digital">
-          twitch.tv/afor_digital
+        No, es totalmente gratuito. Pero si quieres dejar tu prime nadie te dirá
+        nada.
+      </p>
+    ),
+  },
+  {
+    title: "¿Puedo presentar mi charla?",
+    description: (
+      <p className="text-xl font-semibold text-white">
+        Las inscripciones ya están cerradas, puedes ver las charlas
+        seleccionadas en el apartado de horarios.
+      </p>
+    ),
+  },
+  {
+    title: "¿Se podrán ver las charlas más tarde?",
+    description: (
+      <p className="text-xl font-semibold text-white">
+        Sí, todas las charlas se podrán ver más tarde en{" "}
+        <a className="underline" href="https://www.youtube.com/@afor_lives">
+          afor lives
         </a>
       </p>
     ),

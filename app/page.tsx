@@ -4,6 +4,7 @@ import { Contributors } from "./components/common/Contributors";
 import { Divider } from "./components/common/Divider";
 import { Schedule } from "./components/Schedule";
 import { FAQ } from "./components/FAQ";
+import { Footer } from "./components/Footer";
 
 export default function Home({
   searchParams,
@@ -30,7 +31,9 @@ export default function Home({
           <Schedule />
           <Divider />
           <FAQ />
+          <Divider />
           <Contributors />
+          <Footer />
         </section>
       </CursorsContextProvider>
     </main>

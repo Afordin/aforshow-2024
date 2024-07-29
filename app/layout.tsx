@@ -23,7 +23,9 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={cn(dmSans.className, "text-white")}>{children}</body>
+      <body id="top" className={cn(dmSans.className, "text-white")}>
+        {children}
+      </body>
     </html>
   );
 }
