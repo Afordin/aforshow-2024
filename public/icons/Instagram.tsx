@@ -8,6 +8,7 @@ const Instagram = (props: SVGProps<SVGSVGElement>) => (
     height="1em"
     preserveAspectRatio="xMidYMid"
     viewBox="0 0 256 256"
+    style={{fill: "currentColor"}}
     {...props}
   >
     <path
@@ -16,5 +17,4 @@ const Instagram = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-
 export default Instagram;

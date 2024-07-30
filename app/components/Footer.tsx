@@ -21,11 +21,11 @@ const socialIcons: SocialIcon[] = [
     url: "https://www.twitch.tv/afor_digital",
   },
   {
-    icon: <Instagram className="hover:text-warmGray transition-colors" />,
+    icon: <Instagram className="hover:text-pink-500 transition-colors" />,
     url: "https://www.instagram.com/afor_digital",
   },
   {
-    icon: <Github className="hover:text-gray-7 transition-colors" />,
+    icon: <Github className="hover:text-gray-700 transition-colors" />,
     url: "https://github.com/Afordin",
   },
   {
