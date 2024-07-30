@@ -1,7 +1,7 @@
 import { ArrowDown } from "lucide-react";
 import Image from "next/image";
 import { Button } from "./ui/button";
-import X from "public/icons/X";
+import X from "app/components/icons/X";
 
 export const TicketDownload = () => {
   return (

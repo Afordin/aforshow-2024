@@ -1,10 +1,10 @@
 import { cn } from "./utils";
 import Image from "next/image";
-import Discord from "public/icons/Discord";
-import Twitch from "public/icons/Twitch";
-import Instagram from "public/icons/Instagram";
-import Github from "public/icons/Github";
-import X from "public/icons/X";
+import Discord from "app/components/icons/Discord";
+import Twitch from "app/components/icons/Twitch";
+import Instagram from "app/components/icons/Instagram";
+import Github from "app/components/icons/Github";
+import X from "app/components/icons/X";
 
 interface SocialIcon {
   icon: JSX.Element;

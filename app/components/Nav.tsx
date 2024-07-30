@@ -1,5 +1,5 @@
 import { Button } from "./ui/button";
-import Logo from "public/icons/Logo";
+import Logo from "app/components/icons/Logo";
 
 export const Nav = () => {
   return (
