@@ -5,6 +5,7 @@ import { Divider } from "./components/common/Divider";
 import { Schedule } from "./components/Schedule";
 import { FAQ } from "./components/FAQ";
 import { Footer } from "./components/Footer";
+import { TicketDownload } from "./components/TicketDownload";
 
 export default function Home({
   searchParams,
@@ -30,6 +31,7 @@ export default function Home({
           <Divider />
           <Schedule />
           <Divider />
+          <TicketDownload />
           <FAQ />
           <Divider />
           <Contributors />

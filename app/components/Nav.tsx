@@ -1,8 +1,6 @@
 import { Button } from "./ui/button";
 import Logo from "public/icons/Logo";
 
-/* Should be fixed nav? */
-
 export const Nav = () => {
   return (
     <nav className="relative px-2 w-full max-w-6xl h-16 mx-auto flex items-center justify-between">
