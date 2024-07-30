@@ -1,7 +1,11 @@
-import { Github, Instagram, Twitch, Twitter } from "lucide-react";
+import {  Twitter } from "lucide-react";
 import { cn } from "./utils";
 import Image from "next/image";
 import Discord from "public/icons/Discord";
+import X from "public/icons/X";
+import Twitch from "public/icons/Twitch";
+import Instagram from "public/icons/Instagram";
+import Github from "public/icons/Github";
 
 interface SocialIcon {
   icon: JSX.Element;
@@ -18,15 +22,15 @@ const socialIcons: SocialIcon[] = [
     url: "https://www.twitch.tv/afor_digital",
   },
   {
-    icon: <Instagram className="hover:text-warmGray transition-colors" />,
+    icon: <Instagram className="hover:text-pink-500 transition-colors" />,
     url: "https://www.instagram.com/afor_digital",
   },
   {
-    icon: <Github className="hover:text-gray-7 transition-colors" />,
+    icon: <Github className="hover:text-gray-700 transition-colors" />,
     url: "https://github.com/Afordin",
   },
   {
-    icon: <Twitter className="hover:text-neutral-400 transition-colors" />,
+    icon: <X className="hover:text-neutral-400 transition-colors" />,
     url: "https://twitter.com/afor_digital",
   },
 ];
