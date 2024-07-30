@@ -1,11 +1,10 @@
-import {  Twitter } from "lucide-react";
 import { cn } from "./utils";
 import Image from "next/image";
 import Discord from "public/icons/Discord";
-import X from "public/icons/X";
 import Twitch from "public/icons/Twitch";
 import Instagram from "public/icons/Instagram";
 import Github from "public/icons/Github";
+import X from "public/icons/X";
 
 interface SocialIcon {
   icon: JSX.Element;
@@ -14,7 +13,7 @@ interface SocialIcon {
 
 const socialIcons: SocialIcon[] = [
   {
-    icon: <Discord className="hover:text-[#5864F2] transition-colors" />,
+    icon: <Discord />,
     url: "https://discord.com/invite/comuafor",
   },
   {
