@@ -13,7 +13,7 @@ interface SocialIcon {
 
 const socialIcons: SocialIcon[] = [
   {
-    icon: <Discord />,
+    icon: <Discord className="hover:text-blue-500" />,
     url: "https://discord.com/invite/comuafor",
   },
   {

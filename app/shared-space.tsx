@@ -43,7 +43,7 @@ export default function SharedSpace() {
 
   return (
     <div className="flex min-h-screen flex-col gap-[72px] overflow-hidden">
-      <div className="z-10 absolute pointer-events-none top-0 left-0 w-full h-full overflow-clip">
+      <div className="hidden z-10 sm:absolute pointer-events-none top-0 left-0 w-full h-full overflow-clip">
         {count > 0 && (
           <div className="absolute top-4 left-4 pointer-events-none flex items-center">
             <span className="text-2xl">{count}&times;</span>
@@ -62,7 +62,7 @@ export default function SharedSpace() {
       </div>
 
       {Object.keys(others).map((id) => (
-        <div key={id}>
+        <div key={id} className="hidden sm:block">
           <OtherCursor
             id={id}
             windowDimensions={windowDimensions}

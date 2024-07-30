@@ -1,9 +1,5 @@
 import { useCursors } from "./cursors-context";
 
-// NOTE
-// The pointer SVG is from https://github.com/daviddarnes/mac-cursors
-// The license is the Apple User Agreement
-
 export default function SelfCursor(props: {
   windowDimensions: { width: number; height: number };
 }) {
