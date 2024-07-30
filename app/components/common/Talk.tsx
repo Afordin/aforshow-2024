@@ -21,10 +21,12 @@ export const Talk = ({ title, author, hour, img, alt }: TalkProps) => {
           className="rounded-full w-24 h-24 md:w-32 md:h-32"
         />
         <div className="flex flex-col gap-2">
-          <p className="font-semibold md:text-3xl md:leading-10 text-lg text-wrap">
+          <p className="font-semibold md:text-3xl leading-7 md:leading-10 text-scheduleTitle text-wrap">
             {title}
           </p>
-          <p className="text-[#B3B3B3] text-sm md:text-3xl italic">{author}</p>
+          <p className="text-[#B3B3B3] text-scheduleAuthor md:text-3xl italic">
+            {author}
+          </p>
         </div>
       </div>
 
