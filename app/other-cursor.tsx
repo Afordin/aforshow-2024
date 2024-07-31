@@ -36,7 +36,7 @@ export default function OtherCursor(props: {
     })
 
   return (
-    <div className="absolute flex flex-col" style={{ left: left, top: top }}>
+    <div className="absolute flex flex-col z-10" style={{ left: left, top: top }}>
       <svg
       width="26"
       viewBox="0 0 24 36"
