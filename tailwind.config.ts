@@ -58,6 +58,16 @@ const config: Config = {
         scheduleTitle: ["clamp(1rem, 5.5vw, 1.5rem)", "1.1"],
         scheduleAuthor: ["clamp(0.75rem, 5.5vw, 1.5rem)", "1.1"],
       },
+      keyframes: {
+        'logo-cloud': {
+          "0%": { transform: 'translateX(0)' },
+          "50%": { transform: 'translateX(calc(-100% - 4rem))' },
+          "100%": { transform: 'translateX(0)' },
+        },
+      },
+      animation: {
+        'logo-cloud': 'logo-cloud 15s linear infinite',
+      }
     },
   },
   variants: {
