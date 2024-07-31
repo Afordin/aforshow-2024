@@ -1,39 +1,17 @@
-import twemoji from "twemoji";
-import { useCursors } from "./cursors-context";
+import { Cursor } from "./cursors-context";
 
 // NOTE
 // The pointer SVG is from https://github.com/daviddarnes/mac-cursors
 // The license is the Apple User Agreement
 
-function getFlagEmoji(countryCode: string) {
-  const codePoints = countryCode
-    .toUpperCase()
-    .split("")
-    .map((char) => 127397 + char.charCodeAt(0));
-  return String.fromCodePoint(...codePoints);
-}
-
 export default function OtherCursor(props: {
-  id: string;
+  cursor: Cursor
   windowDimensions: { width: number; height: number };
 }) {
-  const { id, windowDimensions } = props;
-  const { others } = useCursors();
-  const cursor = others[id];
-  if (!cursor) {
-    return null;
-  }
+  const { cursor, windowDimensions } = props;
 
   const left = cursor.x * windowDimensions.width;
   const top = cursor.y * windowDimensions.height;
-
-  const flag = cursor.country ? getFlagEmoji(cursor.country) : "";
-
-  const flagAsImage = twemoji.parse(flag,
-    {
-      base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/',
-      className:'twemoji',
-    })
 
   return (
     <div className="absolute flex flex-col z-10" style={{ left: left, top: top }}>
@@ -50,7 +28,7 @@ export default function OtherCursor(props: {
     </svg>
       <span
         className="w-5 -mt-6 ml-2"
-        dangerouslySetInnerHTML={{ __html: flagAsImage }}
+        dangerouslySetInnerHTML={{ __html: cursor.flag }}
       >
       </span>
     </div>

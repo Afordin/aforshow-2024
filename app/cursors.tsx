@@ -5,7 +5,7 @@ import { useCursors } from "./cursors-context";
 import OtherCursor from "./other-cursor";
 
 export default function Cursors() {
-  const { others, self } = useCursors();
+  const { cursors, disabled } = useCursors();
   const [windowDimensions, setWindowDimensions] = useState({
     width: 0,
     height: 0,
@@ -26,28 +26,16 @@ export default function Cursors() {
   }, []);
 
 
-  // get the last 30 cursors
-  const cursors = Object.keys(others).slice(-30);
-  const count = Object.keys(others).length + (self ? 1 : 0);
-  
+  const cursorsSliced = disabled ? [] : cursors.slice(-15);
 
   return (
     <div className="absolute h-full w-full pointer-events-none overflow-hidden">
-      <div className="hidden z-10 sm:absolute pointer-events-none top-0 left-0 w-full h-full overflow-clip">
-        {count > 0 && (
-          <div className="absolute z-10 top-4 left-4 pointer-events-none flex items-center">
-            <span className="text-2xl">{count}&times;</span>
-            <span className="text-5xl">🐁</span>
-          </div>
-        )}
-      </div>
-
-      {cursors.map((id) => (
-          <OtherCursor
-            id={id}
-            key={id}
-            windowDimensions={windowDimensions}
-          />
+      {cursorsSliced.map((cursor) => (
+        <OtherCursor
+          key={cursor.id}
+          cursor={cursor}
+          windowDimensions={windowDimensions}
+        />
       ))}
     </div>
   );
