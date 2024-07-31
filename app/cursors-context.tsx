@@ -1,35 +1,48 @@
 "use client";
 
-import { useState, useEffect, useContext, createContext, useRef } from "react";
+import { useState, useEffect, useContext, createContext, useRef, Dispatch, SetStateAction } from "react";
 import usePartySocket from "partysocket/react";
+import twemoji from "twemoji";
 
 type Position = {
   x: number;
   y: number;
-  pointer: "mouse" | "touch";
+  pointer: "mouse";
 };
 
-type Cursor = Position & {
+export type Cursor = Position & {
+  id: string;
   country: string | null;
+  flag: string;
+  flagUrl: string;
   lastUpdate: number;
 };
 
 type OtherCursorsMap = {
   [id: string]: Cursor;
 };
-
 interface CursorsContextType {
-  others: OtherCursorsMap;
-  self: Position | null;
+  cursors: Array<Cursor>
+  disabled: boolean | null
+  setDisabled: Dispatch<SetStateAction<boolean>> | null
 }
 
 export const CursorsContext = createContext<CursorsContextType>({
-  others: {},
-  self: null,
+  cursors: [],
+  disabled: null,
+  setDisabled: null,
 });
 
 export function useCursors() {
   return useContext(CursorsContext);
+}
+
+function getFlagEmoji(countryCode: string) {
+  const codePoints = countryCode
+    .toUpperCase()
+    .split("")
+    .map((char) => 127397 + char.charCodeAt(0));
+  return String.fromCodePoint(...codePoints);
 }
 
 export default function CursorsContextProvider(props: {
@@ -37,7 +50,7 @@ export default function CursorsContextProvider(props: {
   room: string;
   children: React.ReactNode;
 }) {
-  const [self, setSelf] = useState<Position | null>(null);
+  const [disabled, setDisabled] = useState<boolean>(false);
   const [dimensions, setDimensions] = useState<{
     width: number;
     height: number;
@@ -48,6 +61,24 @@ export default function CursorsContextProvider(props: {
     room: props.room,
   });
   const [others, setOthers] = useState<OtherCursorsMap>({});
+
+  const cursors: Cursor[] = Object.entries(others).map(([id, cursor]): Cursor => {
+    const flag = cursor.country ? getFlagEmoji(cursor.country) : "";
+
+    const flagAsImage = twemoji.parse(flag,
+      {
+        base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/'        
+      })
+
+      const flagUrl = flagAsImage.match(/src="([^"]+)"/)?.[1] || "";
+
+      return {
+        ...cursor,
+        id,
+        flag: flagAsImage,
+        flagUrl: flagUrl,
+      }
+  });
 
   useEffect(() => {
     if (socket) {
@@ -109,42 +140,16 @@ export default function CursorsContextProvider(props: {
         pointer: "mouse",
       } as Position;
       socket.send(JSON.stringify(position));
-      setSelf(position);
     };
-    window.addEventListener("mousemove", onMouseMove);
-
-    // Also listen for touch events
-    const onTouchMove = (e: TouchEvent) => {
-      if (!socket) return;
-      if (!dimensions.width || !dimensions.height) return;
-      e.preventDefault();
-      const position = {
-        x: e.touches[0].clientX / dimensions.width,
-        y: e.touches[0].clientY / dimensions.height,
-        pointer: "touch",
-      } as Position;
-      socket.send(JSON.stringify(position));
-      setSelf(position);
-    };
-    window.addEventListener("touchmove", onTouchMove);
-
-    // Catch the end of touch events
-    const onTouchEnd = (e: TouchEvent) => {
-      if (!socket) return;
-      socket.send(JSON.stringify({}));
-      setSelf(null);
-    };
-    window.addEventListener("touchend", onTouchEnd);
+    window.addEventListener("mousemove", onMouseMove);    
 
     return () => {
       window.removeEventListener("mousemove", onMouseMove);
-      window.removeEventListener("touchmove", onTouchMove);
-      window.removeEventListener("touchend", onTouchEnd);
     };
   }, [socket, dimensions]);
 
   return (
-    <CursorsContext.Provider value={{ others: others, self: self }}>
+    <CursorsContext.Provider value={{ cursors, disabled, setDisabled }}>
       {props.children}
     </CursorsContext.Provider>
   );

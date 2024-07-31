@@ -65,7 +65,7 @@ export const Countdown = ({ className, startFrom }: CountDownProps) => {
   /* Use cn to override the wraper if need it */
 
   return (
-    <div className={cn("flex gap-6 md:gap-16", className)}>
+    <div className={cn("mt-10 flex gap-6 md:gap-16", className)}>
       {time.map(({ key, label }, index) => (
         <section key={index} className="text-center text-shadow-sm">
           <span className="font-bold text-3xl xl:text-6xl">
