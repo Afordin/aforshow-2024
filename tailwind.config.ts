@@ -60,9 +60,8 @@ const config: Config = {
       },
       keyframes: {
         'logo-cloud': {
-          "0%": { transform: 'translateX(0)' },
-          "50%": { transform: 'translateX(calc(-100% - 4rem))' },
-          "100%": { transform: 'translateX(0)' },
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(calc(-100% - 3rem))' },
         },
       },
       animation: {

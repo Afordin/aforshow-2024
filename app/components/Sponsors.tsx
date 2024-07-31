@@ -7,8 +7,9 @@ export const Sponsors = () => {
         Evento sponsorizado gracias a
       </p>
       <div
-        className="flex flex-col sm:flex-row justify-center items-center gap-12"
+        className="flex flex-col sm:flex-row justify-around items-center"
         style={{
+          gap: '3rem',
           maskImage:
             'linear-gradient(to left, transparent 0%, black 20%, black 80%, transparent 95%)',
         }}
