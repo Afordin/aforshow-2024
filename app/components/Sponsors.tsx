@@ -7,7 +7,7 @@ export const Sponsors = () => {
         Evento sponsorizado gracias a
       </p>
       <div
-        className="flex flex-col sm:flex-row justify-around items-center"
+        className="flex flex-col sm:flex-row justify-around items-center [&>*]:animate-logo-cloud"
         style={{
           gap: '3rem',
           maskImage:
@@ -19,42 +19,30 @@ export const Sponsors = () => {
           alt="afordin-logo-sponsor"
           width="200"
           height="200"
-          className="animate-logo-cloud"
         />
         <Image
           src="/imgs/afordin-sponsor.png"
           alt="afordin-logo-sponsor"
           width="200"
           height="200"
-          className="animate-logo-cloud"
         />
         <Image
           src="/imgs/afordin-sponsor.png"
           alt="afordin-logo-sponsor"
           width="200"
           height="200"
-          className="animate-logo-cloud"
         />
         <Image
           src="/imgs/afordin-sponsor.png"
           alt="afordin-logo-sponsor"
           width="200"
           height="200"
-          className="animate-logo-cloud"
         />
         <Image
           src="/imgs/afordin-sponsor.png"
           alt="afordin-logo-sponsor"
           width="200"
           height="200"
-          className="animate-logo-cloud"
-        />
-        <Image
-          src="/imgs/afordin-sponsor.png"
-          alt="afordin-logo-sponsor"
-          width="200"
-          height="200"
-          className="animate-logo-cloud"
         />
       </div>
     </section>
