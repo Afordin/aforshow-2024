@@ -6,7 +6,7 @@ import usePartySocket from "partysocket/react";
 type Position = {
   x: number;
   y: number;
-  pointer: "mouse" | "touch";
+  pointer: "mouse";
 };
 
 type Cursor = Position & {
@@ -111,35 +111,10 @@ export default function CursorsContextProvider(props: {
       socket.send(JSON.stringify(position));
       setSelf(position);
     };
-    window.addEventListener("mousemove", onMouseMove);
-
-    // Also listen for touch events
-    const onTouchMove = (e: TouchEvent) => {
-      if (!socket) return;
-      if (!dimensions.width || !dimensions.height) return;
-      e.preventDefault();
-      const position = {
-        x: e.touches[0].clientX / dimensions.width,
-        y: e.touches[0].clientY / dimensions.height,
-        pointer: "touch",
-      } as Position;
-      socket.send(JSON.stringify(position));
-      setSelf(position);
-    };
-    window.addEventListener("touchmove", onTouchMove);
-
-    // Catch the end of touch events
-    const onTouchEnd = (e: TouchEvent) => {
-      if (!socket) return;
-      socket.send(JSON.stringify({}));
-      setSelf(null);
-    };
-    window.addEventListener("touchend", onTouchEnd);
+    window.addEventListener("mousemove", onMouseMove);    
 
     return () => {
       window.removeEventListener("mousemove", onMouseMove);
-      window.removeEventListener("touchmove", onTouchMove);
-      window.removeEventListener("touchend", onTouchEnd);
     };
   }, [socket, dimensions]);
 

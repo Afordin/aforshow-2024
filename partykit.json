@@ -2,5 +2,5 @@
   "$schema": "https://www.partykit.io/schema.json",
   "name": "aforshow-2024-party",
   "main": "party/server.ts",
-  "compatibilityDate": "2024-07-16"
+  "compatibilityDate": "2024-07-30"
 }
