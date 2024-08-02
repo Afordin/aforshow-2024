@@ -6,7 +6,26 @@ export const Sponsors = () => {
       <p className="text-2xl text-center font-bold bg-clip-text text-transparent bg-gradient-to-br from-caPrimary-500 to-caSecondary-500">
         Evento sponsorizado gracias a
       </p>
-      <div className="flex flex-col sm:flex-row justify-center items-center gap-12">
+      <div
+        className="flex flex-col sm:flex-row justify-around items-center [&>*]:animate-logo-cloud"
+        style={{
+          gap: '3rem',
+          maskImage:
+            'linear-gradient(to left, transparent 0%, black 20%, black 80%, transparent 95%)',
+        }}
+      >
+        <Image
+          src="/imgs/afordin-sponsor.png"
+          alt="afordin-logo-sponsor"
+          width="200"
+          height="200"
+        />
+        <Image
+          src="/imgs/afordin-sponsor.png"
+          alt="afordin-logo-sponsor"
+          width="200"
+          height="200"
+        />
         <Image
           src="/imgs/afordin-sponsor.png"
           alt="afordin-logo-sponsor"
