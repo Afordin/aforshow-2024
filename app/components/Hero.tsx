@@ -1,9 +1,9 @@
 "use client";
 
-import React from 'react'
-import { Nav } from './Nav'
-import { WelcomeHero } from './WelcomeHero'
-import { Sponsors } from './Sponsors'
+import React from "react";
+import { Nav } from "./Nav";
+import { WelcomeHero } from "./WelcomeHero";
+import { Sponsors } from "./Sponsors";
 
 export default function Hero() {
   return (
@@ -17,6 +17,5 @@ export default function Hero() {
         <Sponsors />
       </div>
     </div>
-
-  )
+  );
 }

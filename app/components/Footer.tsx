@@ -33,7 +33,7 @@ const socialIcons: SocialIcon[] = [
 export const Footer = () => {
   const classes = {
     container: cn(
-      "text-cWhite bg-gradient-to-r from-[#19101D] to-[#0D0D0E] py-5 w-full font-dmsans"
+      "relative z-20 text-cWhite bg-gradient-to-r from-[#19101D] to-[#0D0D0E] py-5 w-full font-dmsans"
     ),
     innerContainer: cn(
       "max-w-7xl w-full mx-auto text-center mb-10 flex flex-col justify-between items-center"
@@ -57,58 +57,61 @@ export const Footer = () => {
     ));
 
   return (
-    <footer className={classes.container}>
-      <div className={classes.innerContainer}>
-        {/* Social Sections */}
-        <section
-          aria-labelledby="event-info-heading"
-          className="flex items-center"
-        >
-          <a
-            href="#"
-            className="cursor-pointer hover:opacity-85"
-            aria-label="Volver al inicio"
+    <div className="w-full relative">
+      <div className="w-[200px] h-[200px] blur-[150px] bg-caBlurBoxes absolute z-10 -top-[50px] left-0 right-0 m-auto"></div>
+      <footer className={classes.container}>
+        <div className={classes.innerContainer}>
+          {/* Social Sections */}
+          <section
+            aria-labelledby="event-info-heading"
+            className="flex items-center"
           >
-            <Image
-              src="/imgs/logo.png"
-              width={30}
-              height={30}
-              alt="Event Logo"
-              aria-label="Event Logo Aforshow 2024"
-            />
-          </a>
-
-          <div className="ml-3 flex flex-col gap-y-3">
-            <h4 id="event-info-heading" className="text-sm">
-              Más información del evento
-            </h4>
-            <nav
-              aria-label="Social media links"
-              className="flex gap-x-5 text-2xl"
+            <a
+              href="#"
+              className="cursor-pointer hover:opacity-85"
+              aria-label="Volver al inicio"
             >
-              {renderSocialIcons()}
-            </nav>
-          </div>
-        </section>
+              <Image
+                src="/imgs/logo.png"
+                width={30}
+                height={30}
+                alt="Event Logo"
+                aria-label="Event Logo Aforshow 2024"
+              />
+            </a>
 
-        {/* Copyrights */}
-        <div className={classes.copyRight}>
-          © 2024 Inspirado en&nbsp;
-          <a
-            href="https://www.twitch.tv/uxanarangel"
-            className="underline underline-offset-4"
-          >
-            Ana Rangel.
-          </a>
-          &nbsp;Desarrollado por&nbsp;
-          <a
-            href="https://discord.com/invite/comuafor"
-            className="underline underline-offset-4"
-          >
-            Comuafor
-          </a>
+            <div className="ml-3 flex flex-col gap-y-3">
+              <h4 id="event-info-heading" className="text-sm">
+                Más información del evento
+              </h4>
+              <nav
+                aria-label="Social media links"
+                className="flex gap-x-5 text-2xl"
+              >
+                {renderSocialIcons()}
+              </nav>
+            </div>
+          </section>
+
+          {/* Copyrights */}
+          <div className={classes.copyRight}>
+            © 2024 Inspirado en&nbsp;
+            <a
+              href="https://www.twitch.tv/uxanarangel"
+              className="underline underline-offset-4"
+            >
+              Ana Rangel.
+            </a>
+            &nbsp;Desarrollado por&nbsp;
+            <a
+              href="https://discord.com/invite/comuafor"
+              className="underline underline-offset-4"
+            >
+              Comuafor
+            </a>
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
   );
 };

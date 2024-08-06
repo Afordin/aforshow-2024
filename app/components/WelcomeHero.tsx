@@ -4,7 +4,7 @@ import { Countdown } from "./common/Countdown";
 
 export const WelcomeHero = () => {
   return (
-    <section className="mx-auto mt-5 max-w-6xl w-full h-full">
+    <section className="mx-auto mt-44 max-w-6xl w-full h-full">
       <div className="relative z-20 flex flex-col gap-14 items-center text-center">
         <div className="flex flex-col gap-2">
           <h2 className="text-caTextSecondary text-lg md:text-[24px]">
