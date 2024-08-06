@@ -70,7 +70,7 @@ export const Nav = () => {
         <Button>Inscribirse</Button>
         {user ? (
           <div>
-            <button ref={trigger}>
+            <button>
               <Image
                 src={user?.user_metadata.avatar_url}
                 alt="user avatar image"
