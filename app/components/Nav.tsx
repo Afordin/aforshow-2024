@@ -1,3 +1,5 @@
+"use client";
+
 /* eslint-disable @next/next/no-img-element */
 import { useCursors } from "app/cursors-context";
 import { Button } from "./ui/button";
@@ -8,7 +10,7 @@ import { useAuth } from "@/hooks/useAuth";
 import Image from "next/image";
 import { useOnClickOutside } from "@/hooks/useOnClickOutside";
 import { useRef, useState } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 export const Nav = () => {
   const router = useRouter();
@@ -18,8 +20,9 @@ export const Nav = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const modalRef = useRef<HTMLDivElement | null>(null);
-  const trigger = useOnClickOutside(modalRef, ({ isSameTrigger }) =>
-    setIsOpen(isSameTrigger)
+  const trigger = useOnClickOutside<HTMLDivElement>(
+    modalRef,
+    ({ isSameTrigger }) => setIsOpen(isSameTrigger)
   );
 
   const slice = 3;
@@ -69,8 +72,12 @@ export const Nav = () => {
         </div>
         <Button>Inscribirse</Button>
         {user ? (
-          <div>
-            <button>
+          <div ref={trigger}>
+            <button
+              onClick={() => {
+                setIsOpen(true);
+              }}
+            >
               <Image
                 src={user?.user_metadata.avatar_url}
                 alt="user avatar image"
