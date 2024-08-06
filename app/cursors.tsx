@@ -25,8 +25,7 @@ export default function Cursors() {
     };
   }, []);
 
-
-  const cursorsSliced = disabled ? [] : cursors.slice(-15);
+  const cursorsSliced = disabled ? [] : cursors.slice(-10);
 
   return (
     <div className="absolute h-full w-full pointer-events-none overflow-hidden">

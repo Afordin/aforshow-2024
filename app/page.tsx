@@ -1,3 +1,4 @@
+"use client";
 import CursorsContextProvider from "./cursors-context";
 import { Contributors } from "./components/common/Contributors";
 import { Divider } from "./components/common/Divider";
@@ -7,12 +8,17 @@ import { Footer } from "./components/Footer";
 import { TicketDownload } from "./components/TicketDownload";
 import Hero from "./components/Hero";
 import Cursors from "./cursors";
+import { useEffect } from "react";
+import { apiClient } from "./utils/api";
+import { useUserStore } from "./store/useUserStore";
 
 export default function Home({
   searchParams,
 }: {
   searchParams?: { [key: string]: string | string[] | undefined };
 }) {
+  const setUser = useUserStore((state) => state.setUser);
+
   // when hosted in an iframe on the partykit website, don't render link to the site
   const room =
     typeof searchParams?.partyroom === "string"
@@ -23,6 +29,13 @@ export default function Home({
     typeof searchParams?.partyhost === "string"
       ? searchParams.partyhost
       : "aforshow-2024-party.jarrisondev.partykit.dev";
+
+  useEffect(() => {
+    apiClient.auth.onAuthStateChange((_event, session) => {
+      if (!session?.user) return;
+      setUser(session.user);
+    });
+  }, [setUser]);
 
   return (
     <CursorsContextProvider room={room} host={host}>
