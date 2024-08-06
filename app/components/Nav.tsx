@@ -13,7 +13,7 @@ import { useRouter } from "next/router";
 export const Nav = () => {
   const router = useRouter();
   const { cursors, disabled, setDisabled } = useCursors();
-  const { signInWithDiscord } = useAuth();
+  const { signInWithDiscord, signOut } = useAuth();
   const user = useUserStore((state) => state.user);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -82,7 +82,12 @@ export const Nav = () => {
             {isOpen && (
               <div ref={modalRef}>
                 <div className="bg-slate-900 absolute border-1 border-slate-700 -z-1 px-8 py-3 rounded-md">
-                  <button className="w-full text-slate-300 font-semibold hover:text-white whitespace-nowrap rounded-sm">
+                  <button
+                    onClick={() => {
+                      signOut();
+                    }}
+                    className="w-full text-slate-300 font-semibold hover:text-white whitespace-nowrap rounded-sm"
+                  >
                     Sign Out
                   </button>
                 </div>
