@@ -8,8 +8,10 @@ import { useAuth } from "@/hooks/useAuth";
 import Image from "next/image";
 import { useOnClickOutside } from "@/hooks/useOnClickOutside";
 import { useRef, useState } from "react";
+import { useRouter } from "next/router";
 
 export const Nav = () => {
+  const router = useRouter();
   const { cursors, disabled, setDisabled } = useCursors();
   const { signInWithDiscord } = useAuth();
   const user = useUserStore((state) => state.user);
@@ -91,6 +93,7 @@ export const Nav = () => {
           <Button
             variant="secondary"
             onClick={() => {
+              router.push("/");
               signInWithDiscord();
             }}
           >
