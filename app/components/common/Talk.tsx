@@ -11,25 +11,22 @@ type TalkProps = {
 
 export const Talk = ({ title, author, hour, img, alt }: TalkProps) => {
   return (
-    <article className="flex flex-col md:flex-row justify-between w-full gap-8 items-center text-center md:text-left">
-      <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
-        <Image
-          src={img}
-          alt={alt}
-          width={128}
-          height={128}
-          className="rounded-full w-24 h-24 md:w-32 md:h-32"
-        />
-        <div className="flex flex-col gap-2">
-          <p className="font-semibold md:text-3xl leading-7 md:leading-10 text-scheduleTitle text-wrap">
-            {title}
-          </p>
-          <p className="text-[#B3B3B3] text-scheduleAuthor md:text-3xl italic">
-            {author}
-          </p>
-        </div>
-      </div>
-
+    <article className="grid md:grid-cols-[auto_1fr] lg:grid-cols-[auto_1fr_auto] md:grid-rows-[repeat(2,auto)] lg:grid-rows-1 p-8 w-full gap-8 text-center md:text-left [&>*:last-child]:place-self-center">
+      <Image
+        src={img}
+        alt={alt}
+        width={128}
+        height={128}
+        className="rounded-full size-24 md:size-32 mx-auto"
+      />
+      <footer className="flex flex-col gap-2 md:row-span-2 lg:row-auto">
+        <p className="font-semibold md:text-3xl leading-7 md:leading-10 text-scheduleTitle text-wrap">
+          {title}
+        </p>
+        <p className="text-[#B3B3B3] text-scheduleAuthor md:text-3xl italic">
+          {author}
+        </p>
+      </footer>
       <Tag>20.00h</Tag>
     </article>
   );
