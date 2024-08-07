@@ -1,4 +1,4 @@
-import React from "react";
+import  { useRef, useState } from "react";
 import { ChevronRight } from "lucide-react";
 import { cn } from "../utils";
 
@@ -12,13 +12,34 @@ export const Summary = ({
   className,
   children,
 }: React.PropsWithChildren<Props>) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  const toggleOpen = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <details className={cn("w-full group", className)}>
-      <summary className="font-bold text-[1.75rem] text-white list-none cursor-pointer relative flex items-center justify-between">
+    <div className={cn("w-full group", className)}>
+      <div
+        className="font-bold text-[1.75rem] text-white cursor-pointer relative flex items-center justify-between"
+        onClick={toggleOpen}
+      >
         {title}
-        <ChevronRight className="transition group-open:rotate-90" />
-      </summary>
-      {children}
-    </details>
+        <ChevronRight className={cn("transition", isOpen ? "rotate-90" : "")} />
+      </div>
+      <div
+        ref={contentRef}
+        className={cn(
+          "overflow-hidden transition-all duration-300 ease-in-out",
+          isOpen ? "max-h-[1000px]" : "max-h-0"
+        )}
+        style={{
+          maxHeight: isOpen ? `${contentRef.current?.scrollHeight}px` : "0px",
+        }}
+      >
+        {children}
+      </div>
+    </div>
   );
 };
