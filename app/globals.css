@@ -135,6 +135,33 @@ html {
   }
 }
 
+/************************************************/
+/*                    TICKET                    */
+/************************************************/
+
+.ticket-bg {
+  background-repeat: repeat;
+  background-size: cover;
+  position: relative;
+  background-color: #060606;
+}
+
+.ticket-bg:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  z-index: 1;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url(../public/imgs/ticket/bg.png);
+  opacity: 1%;
+}
+
+.atropos-shadow {
+  background: #c138b830 !important ;
+}
+
 :root {
   --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
   --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);

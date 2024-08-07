@@ -1,9 +1,12 @@
-import { apiClient } from "@/utils/api";
+import { apiClient } from "@/utils/supabase/client";
 
 export const useAuth = () => {
-  function signInWithDiscord() {
+  function signInWithDiscord(redirectTo?: string) {
     apiClient.auth.signInWithOAuth({
       provider: "discord",
+      options: {
+        redirectTo: `${window.location.origin}${redirectTo ?? ''}`,
+      }
     });
   }
 
