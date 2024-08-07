@@ -36,7 +36,7 @@ export const TicketDownload = () => {
       }
     }
   };
-console.log(process.env.NEXT_PUBLIC_BASE_URL, process.env.NEXT_PUBLIC_URL)
+
   const shareTwitter = async () => {
     if (!user || !ticketRef.current) return;
 
