@@ -77,8 +77,10 @@ export const Nav = () => {
           >
             {cursorsSlice.map((cursor) => (
               <div key={cursor.id} className={imgCircleClass}>
-                <img
-                  className="scale-[1.7] absolute top-0 left-0"
+                <Image
+                  width={20}
+                  height={20}
+                  className="scale-[1.7] w-full h-full absolute top-0 left-0"
                   src={cursor.flagUrl}
                   alt="Flag cursor depending on user country"
                 />
