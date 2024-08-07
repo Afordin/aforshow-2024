@@ -13,7 +13,7 @@ export default async function Image() {
   
   if(!user) return new ImageResponse(
     <div style={{display: 'flex', background: '#000000', width:'100%', height: '100%'}}>
-      <img src={'https://aforshow-2024-five.vercel.app/default-og.png'} alt={`Aforshow`} />
+      <img style={{objectFit:'contain'}} src={'https://aforshow-2024-five.vercel.app/default-og.png'} alt={`Aforshow`} />
     </div>
     , { ...size })
 
