@@ -9,7 +9,7 @@ import { TicketDownload } from "./components/TicketDownload";
 import Hero from "./components/Hero";
 import Cursors from "./cursors";
 import { useEffect } from "react";
-import { apiClient } from "./utils/api";
+import { apiClient } from "./utils/supabase/client";
 import { useUserStore } from "./store/useUserStore";
 
 export default function Home({
@@ -17,7 +17,6 @@ export default function Home({
 }: {
   searchParams?: { [key: string]: string | string[] | undefined };
 }) {
-  const setUser = useUserStore((state) => state.setUser);
 
   // when hosted in an iframe on the partykit website, don't render link to the site
   const room =
@@ -30,10 +29,18 @@ export default function Home({
       ? searchParams.partyhost
       : "aforshow-2024-party.jarrisondev.partykit.dev";
 
+  const setUser = useUserStore((state) => state.setUser);
+
   useEffect(() => {
     apiClient.auth.onAuthStateChange((_event, session) => {
-      if (!session?.user) return;
-      setUser(session.user);
+      if (!session?.user) {
+        setUser(null);
+        return;
+      };
+      const id = session.user.id;
+      apiClient.from("profiles").select("*").eq("id", id).then(({ data }) => {
+        if (data?.[0]) setUser(data[0]);
+      });
     });
   }, [setUser]);
 

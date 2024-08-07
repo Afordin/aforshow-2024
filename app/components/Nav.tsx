@@ -110,7 +110,7 @@ export const Nav = () => {
                 }}
               >
                 <Image
-                  src={user?.user_metadata.avatar_url}
+                  src={user?.avatar_url}
                   alt="user avatar image"
                   width={40}
                   height={40}
@@ -135,11 +135,11 @@ export const Nav = () => {
               variant="secondary"
               onClick={() => {
                 router.push("/");
-                signInWithDiscord();
+                signInWithDiscord('/#ticket');
               }}
               className="transition-all duration-300 hover:scale-105"
             >
-              Log In con Discord
+               Obtén tu ticket
             </Button>
           )}
         </div>

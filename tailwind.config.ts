@@ -66,7 +66,10 @@ const config: Config = {
       },
       animation: {
         'logo-cloud': 'logo-cloud 15s linear infinite',
-      }
+      },
+      backgroundImage: theme => ({
+        'gradient-to-rb': 'linear-gradient(to right bottom, var(--tw-gradient-stops))',
+      }),
     },
   },
   variants: {
