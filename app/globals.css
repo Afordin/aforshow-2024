@@ -157,3 +157,40 @@ html {
   --ease-in-out-expo: cubic-bezier(1, 0, 0, 1);
   --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
+
+/************************************************/
+/*             Sponsors Marquee ANIMATION       */
+/************************************************/
+
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: scroll var(--speed) linear infinite;
+}
+
+.marquee.left {
+  animation-direction: normal;
+}
+
+.marquee.right {
+  animation-direction: reverse;
+}
+
+.marquee-item {
+  flex-shrink: 0;
+  margin: 0 1rem;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
