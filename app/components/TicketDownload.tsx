@@ -65,8 +65,10 @@ export const TicketDownload = () => {
       </p>
       {user && (
         <>
-          <Ticket ref={ticketRef} name={user?.name} avatar={user?.avatar_url} number={user?.count} />
-          <div className="flex justify-center gap-x-5">
+        <a href={`/${user.id}`} >
+          <Ticket ref={ticketRef} name={user.name} avatar={user.avatar_url} number={user.count} />
+        </a>
+          <div className="flex justify-center gap-x-5 ">
             <Button size="xl" className="flex gap-x-2"
               onClick={shareTwitter}>
               <X className="size-4 ml-2" />
@@ -79,7 +81,7 @@ export const TicketDownload = () => {
               Descargar ticket
             </Button>
           </div>
-        </>
+          </>
 
       )}
 

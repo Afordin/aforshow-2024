@@ -4,6 +4,7 @@
 
 html {
   background-color: #060606;
+  scroll-behavior: smooth;
 }
 
 @layer components {
