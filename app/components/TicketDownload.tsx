@@ -45,7 +45,7 @@ export const TicketDownload = () => {
     const urlstring = process.env.NEXT_PUBLIC_URL || 'https://aforshow-2024.vercel.app';
     const url = `${urlstring}/${user.id}/`;
     
-    const message = 'Este es tu ticket exclusivo para el Aforshow, habrán charlas, premios y sorteos. ¡Te esperamos! 🚀🎉';
+    const message = 'Este es tu ticket exclusivo para el Aforshow, habrá charlas, premios y sorteos. ¡Te esperamos! 🚀🎉';
     const hashtags = ['aforshow'];
 
     const encodedText = encodeURIComponent(message);
