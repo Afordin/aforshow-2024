@@ -1,6 +1,8 @@
+import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 
-export default function Page() {
-  
-  return redirect("/login");
+export default async function Page() {
+  const apiClient = createClient();
+  const user = (await apiClient.auth.getUser()).data.user;
+  return redirect("/");
 }
