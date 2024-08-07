@@ -56,6 +56,11 @@ export const Footer = () => {
       </a>
     ));
 
+  const handleScrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="w-full relative">
       <div className="w-[200px] h-[200px] blur-[150px] bg-caBlurBoxes absolute z-10 -top-[50px] left-0 right-0 m-auto"></div>
@@ -70,6 +75,7 @@ export const Footer = () => {
               href="#"
               className="cursor-pointer hover:opacity-85"
               aria-label="Volver al inicio"
+              onClick={handleScrollToTop}
             >
               <Image
                 src="/imgs/logo.png"
