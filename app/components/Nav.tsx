@@ -69,7 +69,7 @@ export const Nav = () => {
         <div className="hidden md:flex items-center gap-5 h-full">
           <div
             className={cn(
-              "group flex -space-x-3 hover:cursor-pointer overflow-hidden p-2 transition-opacity duration-300",
+              "group flex -space-x-3 hover:cursor-pointer  p-2 transition-opacity duration-300",
               { "opacity-70": disabled }
             )}
             onClick={() => {
