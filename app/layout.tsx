@@ -11,9 +11,6 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Aforshow",
   description: "A spanish programming event of the community making talks",
-  openGraph: {
-    'images':'https://aforshow-2024-five.vercel.app/default-og.png'
-  }
 };
 
 export default function RootLayout({
