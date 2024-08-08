@@ -13,7 +13,7 @@ export default function Hero() {
         <div className="w-full absolute -bottom-20 h-[200px]"></div>
         <div className="bg-caBlurBoxes absolute right-[-100px] top-20 h-[400px] w-[200px] blur-[200px] sm:h-[300px] sm:w-[300px]"></div>
         <Nav />
-        <WelcomeHero />
+        <WelcomeHero variant="home" />
         <Sponsors />
       </div>
     </div>
