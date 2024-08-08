@@ -1,16 +1,16 @@
 "use client";
-/* eslint-disable @next/next/no-img-element */
+
+import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
 import { useCursors } from "app/cursors-context";
 import { Button } from "./ui/button";
 import Logo from "app/components/icons/Logo";
 import { cn } from "./utils";
 import { useUserStore } from "@/store/useUserStore";
 import { useAuth } from "@/hooks/useAuth";
-import Image from "next/image";
 import { useOnClickOutside } from "@/hooks/useOnClickOutside";
-import { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
-import { Menu, X } from "lucide-react";
 
 export const Nav = () => {
   const router = useRouter();
@@ -41,6 +41,7 @@ export const Nav = () => {
 
       if (currentScrollY > lastScrollY) {
         setShowNavbar(false);
+        setMobileMenuOpen(false);
       } else {
         setShowNavbar(true);
       }
@@ -54,6 +55,18 @@ export const Nav = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [lastScrollY]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setMobileMenuOpen(false);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <nav
@@ -145,7 +158,6 @@ export const Nav = () => {
         </div>
         <div className="md:hidden flex items-center">
           <Button
-          
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="transition-all duration-300 hover:bg-slate-800"
           >
