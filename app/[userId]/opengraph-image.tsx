@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { createClient } from '@/utils/supabase/server'
 import { ImageResponse } from 'next/og'
 
@@ -23,8 +24,8 @@ export default async function Image({ params: { userId } }) {
   const imageUrl = `https://uuljbqkwvruhxomkmxaj.supabase.co/storage/v1/object/public/aforshow/public/${user.id}.png`
   
   return new ImageResponse(
-    <div style={{display: 'flex', background: '#000000', width:'100%', height: '100%'}}>
-      <img src={imageUrl} alt={`Aforshow`} />
+    <div style={{display: 'flex', background: '#060606', width:'100%', height: '100%', alignItems:'center', justifyContent:'center'}}>
+      <img width={'98%'} style={{objectFit:'contain', boxShadow: '5px 0px 73px -3px #c138b85c', borderRadius:'2rem' }} src={imageUrl} alt={`Aforshow`} />
     </div>
     ,
     { ...size }
