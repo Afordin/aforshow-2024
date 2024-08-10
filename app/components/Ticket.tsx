@@ -42,7 +42,7 @@ export const Ticket = forwardRef<HTMLDivElement, TicketProps>(function Ticket({
                 id="avatar"
                 alt={`Avatar de ${name}`}
               />
-              <div className="pr-[10px] flex flex-col gap-3 justify-center">
+              <div className="pr-[20px] flex flex-col gap-3 justify-center">
                 <h3
                   title={name}
                   data-atropos-offset="3"
