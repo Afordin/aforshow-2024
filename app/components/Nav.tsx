@@ -70,7 +70,7 @@ export const Nav = () => {
 
   return (
     <nav
-      className={`fixed w-full z-30 bg-slate-900/20 backdrop-blur-sm flex justify-center items-center h-16 transition-all duration-300 ${
+      className={`fixed w-full z-30 flex justify-center items-center h-16 transition-all duration-300 ${
         showNavbar ? "translate-y-0" : "-translate-y-full"
       }`}
     >
