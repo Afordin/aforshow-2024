@@ -28,7 +28,7 @@ export const Ticket = forwardRef<HTMLDivElement, TicketProps>(function Ticket({
       <Atropos
         shadowScale={1.1}
         innerClassName="rounded-2xl"
-        className="h-[210px] w-[720px] bg-transparent mx-auto sm:h-[310px] rounded-2xl shadow-[0_0px_90px_-10px_#c138b830] hover:shadow-none"
+        className="w-[60%] lg:w-full h-[30%] max-h-[210px] max-w-[700px] bg-transparent mx-auto rounded-2xl shadow-[0_0px_90px_-10px_#c138b830] hover:shadow-none"
       >
         <div className="ticket-bg w-full flex h-full rounded-2xl border-2 border-[#171717]" ref={ref}>
           <div
@@ -37,12 +37,12 @@ export const Ticket = forwardRef<HTMLDivElement, TicketProps>(function Ticket({
             <div className="flex gap-5 items-center">
               <img
                 data-atropos-offset="2"
-                className="w-16 sm:w-28 aspect-square rounded-full p-[0.1rem] bg-gradient-to-rb from-caPrimary-600 to-caSecondary-500"
+                className="w-8 lg:w-16 sm:w-28 aspect-square rounded-full p-[0.1rem] bg-gradient-to-rb from-caPrimary-600 to-caSecondary-500"
                 src={avatar}
                 id="avatar"
                 alt={`Avatar de ${name}`}
               />
-              <div className="flex flex-col gap-3 justify-center">
+              <div className="pr-[20px] flex flex-col gap-3 justify-center">
                 <h3
                   title={name}
                   data-atropos-offset="3"
