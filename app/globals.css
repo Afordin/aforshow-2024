@@ -2,6 +2,223 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+html {
   background-color: #060606;
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  .buttonBgTransition {
+    @apply bg-pos-0 hover:bg-pos-100 bg-size-200 transition-all duration-300;
+  }
+
+  /* Contributors its a component, not an utility */
+
+  .contributors {
+    /* NOTE: The contributor-count should increase as the number of contributors increases */
+    --contributor-count: 17;
+    --contributor-size: 3.125rem;
+    --column-size: calc(var(--contributor-size) / 1.5);
+
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(var(--contributor-count), var(--column-size));
+    transition: 500ms;
+    transition-delay: 500ms;
+
+    padding-inline: 2rem;
+    padding-block: 2rem;
+
+    /* Hide scrollbar */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .contributors:hover {
+    --column-size: calc(var(--contributor-size) * 1);
+    transition-delay: 0ms;
+  }
+
+  .contributors::-webkit-scrollbar {
+    display: none;
+  }
+
+  .contributor {
+    overflow: hidden;
+    border-radius: 100svw;
+    transition: scale 500ms;
+    border: 0.125rem solid white;
+    width: var(--contributor-size);
+    box-shadow: 0.25rem 0.25rem 0.5rem hsl(0 0% 0% / 0.2);
+  }
+
+  .contributor:hover {
+    scale: 1.8;
+    z-index: 2;
+  }
+
+  @supports selector(:has(+ *)) {
+    .contributor:hover + .contributor,
+    .contributor:has(+ .contributor:hover) {
+      scale: 1.1;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .contributors {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 0.5rem;
+    }
+
+    @supports selector(:has(+ *)) {
+      .contributor:hover,
+      .contributor:hover + .contributor,
+      .contributor:has(+ .contributor:hover) {
+        scale: 1;
+      }
+    }
+  }
+}
+
+.bg-pattern::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 150%;
+  top: -20%;
+  zoom: 2;
+  left: -50%;
+  z-index: -1;
+  transform: rotate(9deg);
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%234A4A4A' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
+  mask: linear-gradient(
+    172deg,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0)
+  );
+  mask-composite: exclude;
+}
+
+.gradiant-tag::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 99999px;
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, #fc1c37, #ad40e1) border-box;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+/************************************************/
+/*             LOGO ANIMATION                   */
+/************************************************/
+
+#logo {
+  fill-opacity: 0;
+  stroke-dasharray: 1300;
+  stroke-dashoffset: 1300;
+  animation: dash 2s ease-in forwards;
+}
+
+@keyframes dash {
+  70% {
+    fill-opacity: 0;
+  }
+
+  100% {
+    fill-opacity: 100%;
+    stroke-dashoffset: 0;
+    stroke-width: 1;
+  }
+}
+
+/************************************************/
+/*                    TICKET                    */
+/************************************************/
+
+.ticket-bg {
+  background-repeat: repeat;
+  background-size: cover;
+  position: relative;
+  background-color: #060606;
+}
+
+.ticket-bg:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  z-index: 1;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url(../public/imgs/ticket/bg.png);
+  opacity: 1%;
+}
+
+.atropos-shadow {
+  background: #c138b830 !important ;
+}
+
+:root {
+  --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  --ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  --ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  --ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  --ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+
+  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  --ease-in-out-expo: cubic-bezier(1, 0, 0, 1);
+  --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+/************************************************/
+/*             Sponsors Marquee ANIMATION       */
+/************************************************/
+
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: scroll var(--speed) linear infinite;
+}
+
+.marquee.left {
+  animation-direction: normal;
+}
+
+.marquee.right {
+  animation-direction: reverse;
+}
+
+.marquee-item {
+  flex-shrink: 0;
+  margin: 0 1rem;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
