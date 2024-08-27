@@ -11,6 +11,7 @@ import { cn } from "./utils";
 import { useUserStore } from "@/store/useUserStore";
 import { useAuth } from "@/hooks/useAuth";
 import { useOnClickOutside } from "@/hooks/useOnClickOutside";
+import { Link } from "./common/Link";
 
 export const Nav = () => {
   const router = useRouter();
@@ -61,10 +62,10 @@ export const Nav = () => {
       setMobileMenuOpen(false);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -77,7 +78,9 @@ export const Nav = () => {
       <div className="relative flex w-full max-w-6xl mx-auto justify-between px-4 md:px-6">
         <a href="/" className="flex items-center gap-1 cursor-pointer">
           <Logo />
-          <h1 className="text-xl md:text-2xl text-white font-semibold transition-all duration-300">Aforshow</h1>
+          <h1 className="text-xl md:text-2xl text-white font-semibold transition-all duration-300">
+            Aforshow
+          </h1>
         </a>
         <div className="hidden md:flex items-center gap-5 h-full">
           <div
@@ -90,7 +93,11 @@ export const Nav = () => {
             }}
           >
             {cursorsSlice.map((cursor, index) => (
-              <div key={cursor.id} className={`${imgCircleClass} transition-transform duration-300 hover:scale-110`} style={{transform: `translateX(${index * 5}px)`}}>
+              <div
+                key={cursor.id}
+                className={`${imgCircleClass} transition-transform duration-300 hover:scale-110`}
+                style={{ transform: `translateX(${index * 5}px)` }}
+              >
                 <Image
                   width={20}
                   height={20}
@@ -106,7 +113,7 @@ export const Nav = () => {
                   imgCircleClass,
                   "flex items-center justify-center bg-[#121112] transition-transform duration-300 hover:scale-110"
                 )}
-                style={{transform: `translateX(${slice * 5}px)`}}
+                style={{ transform: `translateX(${slice * 5}px)` }}
               >
                 <span className="text-white font-semibold">
                   +{cursors.length - slice}
@@ -114,7 +121,12 @@ export const Nav = () => {
               </div>
             )}
           </div>
-          <Button className="transition-all duration-300 hover:scale-105">Inscribirse</Button>
+          <Link
+            href="https://docs.google.com/forms/d/e/1FAIpQLSc-tddK0-eUZODZr8ErbFHkthVZdzQTyI-xDPRRFsZN76NGzw/viewform"
+            className="transition-all duration-300 hover:scale-105"
+          >
+            Votar charlas
+          </Link>
           {user ? (
             <div ref={trigger}>
               <button
@@ -131,7 +143,10 @@ export const Nav = () => {
                 />
               </button>
               {isOpen && (
-                <div ref={modalRef} className="absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-slate-900 ring-1 ring-black ring-opacity-5 transition-all duration-300">
+                <div
+                  ref={modalRef}
+                  className="absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-slate-900 ring-1 ring-black ring-opacity-5 transition-all duration-300"
+                >
                   <button
                     onClick={() => {
                       signOut();
@@ -148,11 +163,11 @@ export const Nav = () => {
               variant="secondary"
               onClick={() => {
                 router.push("/");
-                signInWithDiscord('/#ticket');
+                signInWithDiscord("/#ticket");
               }}
               className="transition-all duration-300 hover:scale-105"
             >
-               Obtén tu ticket
+              Obtén tu ticket
             </Button>
           )}
         </div>
@@ -161,16 +176,28 @@ export const Nav = () => {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="transition-all duration-300 hover:bg-slate-800"
           >
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {mobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </Button>
         </div>
       </div>
-      <div 
+      <div
         className={`absolute top-16 left-0 w-full bg-slate-900 p-4 md:hidden transition-all duration-300 ease-in-out ${
-          mobileMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+          mobileMenuOpen
+            ? "max-h-64 opacity-100"
+            : "max-h-0 opacity-0 overflow-hidden"
         }`}
       >
-        <Button className="w-full mb-2 transition-all duration-300 hover:scale-105">Inscribirse</Button>
+        <Link
+          href="https://docs.google.com/forms/d/e/1FAIpQLSc-tddK0-eUZODZr8ErbFHkthVZdzQTyI-xDPRRFsZN76NGzw/viewform"
+          className="transition-all duration-300 hover:scale-105"
+          variant="primary"
+        >
+          Votar charlas
+        </Link>
         {user ? (
           <Button
             variant="secondary"

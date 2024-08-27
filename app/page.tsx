@@ -17,7 +17,6 @@ export default function Home({
 }: {
   searchParams?: { [key: string]: string | string[] | undefined };
 }) {
-
   // when hosted in an iframe on the partykit website, don't render link to the site
   const room =
     typeof searchParams?.partyroom === "string"
@@ -36,11 +35,15 @@ export default function Home({
       if (!session?.user) {
         setUser(null);
         return;
-      };
+      }
       const id = session.user.id;
-      apiClient.from("profiles").select("*").eq("id", id).then(({ data }) => {
-        if (data?.[0]) setUser(data[0]);
-      });
+      apiClient
+        .from("profiles")
+        .select("*")
+        .eq("id", id)
+        .then(({ data }) => {
+          if (data?.[0]) setUser(data[0]);
+        });
     });
   }, [setUser]);
 
@@ -51,8 +54,8 @@ export default function Home({
         <Hero />
         <section className="flex flex-col gap-[72px]">
           <Divider />
-          <Schedule />
-          <Divider />
+          {/* <Schedule /> */}
+          {/* <Divider /> */}
           <TicketDownload />
           <FAQ />
           <Divider />
