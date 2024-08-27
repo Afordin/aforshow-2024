@@ -194,7 +194,6 @@ export const Nav = () => {
         <Link
           href="https://docs.google.com/forms/d/e/1FAIpQLSc-tddK0-eUZODZr8ErbFHkthVZdzQTyI-xDPRRFsZN76NGzw/viewform"
           className="transition-all duration-300 hover:scale-105"
-          variant="primary"
         >
           Votar charlas
         </Link>
