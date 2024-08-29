@@ -4,16 +4,14 @@ import { X } from "@/components/logos";
 import { useUserStore } from "@/store/useUserStore";
 import { Ticket } from "./Ticket";
 import { useRef } from "react";
-import { toPng } from 'html-to-image';
+import { toPng } from "html-to-image";
 import { useAuth } from "@/hooks/useAuth";
 import { uploadTicket } from "./utils/uploadTicket";
-
 
 export const TicketDownload = () => {
   const { signInWithDiscord } = useAuth();
   const user = useUserStore((state) => state.user);
   const ticketRef = useRef<HTMLDivElement>(null);
-
 
   const downloadTicket = async () => {
     if (ticketRef.current) {
@@ -21,18 +19,18 @@ export const TicketDownload = () => {
         const dataUrl = await toPng(ticketRef.current);
 
         if (!dataUrl) {
-          console.error('Could not capture image');
+          console.error("Could not capture image");
           return;
         }
 
-        const link = document.createElement('a');
-        link.download = 'hackafor-ticket.png';
+        const link = document.createElement("a");
+        link.download = "hackafor-ticket.png";
         link.href = dataUrl;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
       } catch (error) {
-        console.error('Could not capture image:', error);
+        console.error("Could not capture image:", error);
       }
     }
   };
@@ -42,47 +40,58 @@ export const TicketDownload = () => {
 
     await uploadTicket(user.id, ticketRef.current);
 
-    const urlstring = process.env.NEXT_PUBLIC_BASE_URL || 'https://aforshow-2024.vercel.app';
+    const urlstring =
+      process.env.NEXT_PUBLIC_BASE_URL || "https://aforshow-2024.vercel.app";
     const url = `${urlstring}/${user.id}/`;
-    
-    const message = 'Este es tu ticket exclusivo para el Aforshow, habrá charlas, premios y sorteos. ¡Te esperamos! 🚀🎉';
-    const hashtags = ['aforshow'];
+
+    const message =
+      "Este es tu ticket exclusivo para el Aforshow, habrá charlas, premios y sorteos. ¡Te esperamos! 🚀🎉";
+    const hashtags = ["aforshow"];
 
     const encodedText = encodeURIComponent(message);
     const encodedUrl = encodeURIComponent(url);
-    const hashtagsEncoded = encodeURIComponent(hashtags.join(','));
+    const hashtagsEncoded = encodeURIComponent(hashtags.join(","));
 
     const twitterUrl = `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}&hashtags=${hashtagsEncoded}`;
 
-    window.open(twitterUrl, '_blank');
-
-  }
+    window.open(twitterUrl, "_blank");
+  };
 
   return (
-    <section id="ticket" className="w-full min-h-[600px] max-w-6xl items-center mx-auto flex gap-12 flex-col py-7">
+    <section
+      id="ticket"
+      className="w-full min-h-[600px] max-w-6xl items-center mx-auto flex gap-12 flex-col py-7"
+    >
       <p className="text-3xl font-semibold">
         Descarga tu ticket y compártelo en redes sociales
       </p>
       {user && (
         <>
-        <a href={`/${user.id}`} >
-          <Ticket ref={ticketRef} name={user.name} avatar={user.avatar_url} number={user.count} />
-        </a>
-          <div className="flex justify-center gap-x-5 ">
-            <Button size="xl" className="flex gap-x-2"
-              onClick={shareTwitter}>
+          <a href={`/${user.id}`}>
+            <Ticket
+              ref={ticketRef}
+              name={user.name}
+              avatar={user.avatar_url}
+              number={user.count}
+            />
+          </a>
+          <div className="flex justify-center pt-20 gap-x-5 ">
+            <Button size="xl" className="flex gap-x-2" onClick={shareTwitter}>
               <X className="size-4 ml-2" />
               Compartir
             </Button>
 
-            <Button variant="secondary" className="flex gap-x-2" size="xl"
-              onClick={downloadTicket}>
+            <Button
+              variant="secondary"
+              className="flex gap-x-2"
+              size="xl"
+              onClick={downloadTicket}
+            >
               <ArrowDown className="size-5" />
               Descargar ticket
             </Button>
           </div>
-          </>
-
+        </>
       )}
 
       {user === undefined && (
@@ -101,7 +110,7 @@ export const TicketDownload = () => {
               className="absolute"
               variant="default"
               onClick={() => {
-                signInWithDiscord('/#ticket');
+                signInWithDiscord("/#ticket");
               }}
             >
               Obtén tu ticket
