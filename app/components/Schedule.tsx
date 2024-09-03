@@ -8,13 +8,13 @@ export const Schedule = () => {
       </h2>
       <div className="flex flex-col gap-16">
         <Talk
-          title="De Junior a Líder"
-          author="José Manuel Ortega Falcón"
-          hour="20.00h"
-          img="/imgs/ikurotime.png"
-          alt="contributor 1"
+          title="Top Tips para Deslumbrar en una Entrevista"
+          author="Serudda"
+          hour="por definir"
+          img="/imgs/speakers/speaker-1.png"
+          alt="speaker 1 image: serudda"
         />
-        <Talk
+        {/* <Talk
           title="Mi Experiencia como Desarrollador Junior en Latinoamérica: ¿Un Viaje hacia el Éxito?"
           author="Edgar Mejia Vásquez"
           hour="20.00h"
@@ -41,7 +41,7 @@ export const Schedule = () => {
           hour="20.00h"
           img="/imgs/ikurotime.png"
           alt="contributor 1"
-        />
+        /> */}
       </div>
     </section>
   );

@@ -54,8 +54,8 @@ export default function Home({
         <Hero />
         <section className="flex flex-col gap-[72px]">
           <Divider />
-          {/* <Schedule /> */}
-          {/* <Divider /> */}
+          <Schedule />
+          <Divider />
           <TicketDownload />
           <FAQ />
           <Divider />
