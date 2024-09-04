@@ -10,32 +10,32 @@ export const Schedule = () => {
         <Talk
           title="Top Tips para Deslumbrar en una Entrevista"
           author="Serudda"
-          hour="por definir"
+          hour="xx.00h"
           img="/imgs/speakers/speaker-1.png"
           alt="speaker 1 image: serudda"
         />
+        <Talk
+          title="Primeros 6 Meses trabajando como Desarrolladora: Lecciones que No Esperaba"
+          author="Kao Lo"
+          hour="xx.00h"
+          img="/imgs/speakers/speaker-3.jpg"
+          alt="speaker 3 image: Kao Lo"
+        />
+        <Talk
+          title="Construye tu primer LLM agente con python paso a paso"
+          author="Moises Ariza"
+          hour="xx.00h"
+          img="/imgs/speakers/speaker-2.jpg"
+          alt="speaker 2 image: Moises Ariza"
+        />
         {/* <Talk
-          title="Mi Experiencia como Desarrollador Junior en Latinoamérica: ¿Un Viaje hacia el Éxito?"
-          author="Edgar Mejia Vásquez"
-          hour="20.00h"
+          title="Easy Docker: Dockeriza tu Frontend y Deja Atrás a la Competencia"
+          author="Kevin Santiago Rey Rodriguez"
+          hour="xx.00h"
           img="/imgs/ikurotime.png"
-          alt="contributor 1"
-        />
-        <Talk
-          title="El camino menos transitado: Cómo llegué al sector IT a los 35 añazos"
-          author="David Rodríguez - Xerosec"
-          hour="20.00h"
-          img="/imgs/ikurotime.png"
-          alt="contributor 1"
-        />
-        <Talk
-          title="Magical girls UI: los secretos de la animación en Figma"
-          author="Anaís Fernández Vilar"
-          hour="20.00h"
-          img="/imgs/ikurotime.png"
-          alt="contributor 1"
-        />
-        <Talk
+          alt="speaker 4 image: Kevin Santiago Rey Rodriguez"
+        /> */}
+        {/* <Talk
           title="Sobrevivir al Código - Guía para programadores impacientes"
           author="David Huertas - Ikurotime"
           hour="20.00h"

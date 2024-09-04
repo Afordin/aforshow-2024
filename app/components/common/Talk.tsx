@@ -17,7 +17,7 @@ export const Talk = ({ title, author, hour, img, alt }: TalkProps) => {
         alt={alt}
         width={130}
         height={130}
-        className="rounded-full size-24 md:size-28 mx-auto"
+        className="rounded-full object-cover  size-24 md:size-28 mx-auto"
       />
       <footer className="flex flex-col gap-2 md:row-span-2 lg:row-auto">
         <p className="font-semibold md:text-3xl leading-7 md:leading-10 text-scheduleTitle text-wrap">
