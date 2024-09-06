@@ -28,20 +28,20 @@ export const Schedule = () => {
           img="/imgs/speakers/speaker-2.jpg"
           alt="speaker 2 image: Moises Ariza"
         />
-        {/* <Talk
+        <Talk
           title="Easy Docker: Dockeriza tu Frontend y Deja Atrás a la Competencia"
-          author="Kevin Santiago Rey Rodriguez"
+          author="Santiago/@ksreyr"
           hour="xx.00h"
-          img="/imgs/ikurotime.png"
+          img="/imgs/speakers/speaker-4.jpeg"
           alt="speaker 4 image: Kevin Santiago Rey Rodriguez"
-        /> */}
-        {/* <Talk
-          title="Sobrevivir al Código - Guía para programadores impacientes"
-          author="David Huertas - Ikurotime"
-          hour="20.00h"
-          img="/imgs/ikurotime.png"
-          alt="contributor 1"
-        /> */}
+        />
+        <Talk
+          title="Mindset de Crecimiento para Programadores: Supera el Síndrome del Impostor y Aumenta tu Productividad"
+          author="Karol Neiza"
+          hour="xx.00h"
+          img="/imgs/speakers/speaker-5.png"
+          alt="speaker 5 image: Karol Neiza"
+        />
       </div>
     </section>
   );
