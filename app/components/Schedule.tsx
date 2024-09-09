@@ -8,20 +8,6 @@ export const Schedule = () => {
       </h2>
       <div className="flex flex-col gap-16">
         <Talk
-          title="Top Tips para Deslumbrar en una Entrevista"
-          author="Serudda"
-          hour="xx.00h"
-          img="/imgs/speakers/speaker-1.png"
-          alt="speaker 1 image: serudda"
-        />
-        <Talk
-          title="Primeros 6 Meses trabajando como Desarrolladora: Lecciones que No Esperaba"
-          author="Kao Lo"
-          hour="xx.00h"
-          img="/imgs/speakers/speaker-3.jpg"
-          alt="speaker 3 image: Kao Lo"
-        />
-        <Talk
           title="Construye tu primer LLM agente con python paso a paso"
           author="Moises Ariza"
           hour="xx.00h"
@@ -31,9 +17,23 @@ export const Schedule = () => {
         <Talk
           title="Easy Docker: Dockeriza tu Frontend y Deja Atrás a la Competencia"
           author="Santiago/@ksreyr"
-          hour="xx.00h"
+          hour="20.30h"
           img="/imgs/speakers/speaker-4.jpeg"
           alt="speaker 4 image: Kevin Santiago Rey Rodriguez"
+        />
+        <Talk
+          title="Primeros 6 Meses trabajando como Desarrolladora: Lecciones que No Esperaba"
+          author="Kao Lo"
+          hour="xx.00h"
+          img="/imgs/speakers/speaker-3.jpg"
+          alt="speaker 3 image: Kao Lo"
+        />
+        <Talk
+          title="Top Tips para Deslumbrar en una Entrevista"
+          author="Serudda"
+          hour="xx.00h"
+          img="/imgs/speakers/speaker-1.png"
+          alt="speaker 1 image: serudda"
         />
         <Talk
           title="Mindset de Crecimiento para Programadores: Supera el Síndrome del Impostor y Aumenta tu Productividad"

@@ -27,7 +27,7 @@ export const Talk = ({ title, author, hour, img, alt }: TalkProps) => {
           {author}
         </p>
       </footer>
-      <Tag>??.00h</Tag>
+      <Tag>{hour}</Tag>
     </article>
   );
 };
