@@ -10,7 +10,7 @@ export const Schedule = () => {
         <Talk
           title="Construye tu primer LLM agente con python paso a paso"
           author="Moises Ariza"
-          hour="xx.00h"
+          hour="20.00h"
           img="/imgs/speakers/speaker-2.jpg"
           alt="speaker 2 image: Moises Ariza"
         />
@@ -22,9 +22,16 @@ export const Schedule = () => {
           alt="speaker 4 image: Kevin Santiago Rey Rodriguez"
         />
         <Talk
+          title="Mindset de Crecimiento para Programadores: Supera el Síndrome del Impostor y Aumenta tu Productividad"
+          author="Karol Neiza"
+          hour="21:30h"
+          img="/imgs/speakers/speaker-5.png"
+          alt="speaker 5 image: Karol Neiza"
+        />
+        <Talk
           title="Primeros 6 Meses trabajando como Desarrolladora: Lecciones que No Esperaba"
           author="Kao Lo"
-          hour="xx.00h"
+          hour="22.00h"
           img="/imgs/speakers/speaker-3.jpg"
           alt="speaker 3 image: Kao Lo"
         />
@@ -34,13 +41,6 @@ export const Schedule = () => {
           hour="xx.00h"
           img="/imgs/speakers/speaker-1.png"
           alt="speaker 1 image: serudda"
-        />
-        <Talk
-          title="Mindset de Crecimiento para Programadores: Supera el Síndrome del Impostor y Aumenta tu Productividad"
-          author="Karol Neiza"
-          hour="xx.00h"
-          img="/imgs/speakers/speaker-5.png"
-          alt="speaker 5 image: Karol Neiza"
         />
       </div>
     </section>
