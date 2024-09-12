@@ -18,7 +18,7 @@ export default async function Page({ params: { userId } }) {
         <div className="w-full absolute -bottom-20 h-[200px]"></div>
         <div className="bg-caBlurBoxes absolute right-[-100px] top-20 h-[400px] w-[200px] blur-[200px] sm:h-[300px] sm:w-[300px]"></div>
         <WelcomeHero variant="ticket">
-          <div className="mt-10">
+          <div className="my-10">
              <Ticket name={user?.name} avatar={user?.avatar_url} number={user?.count} />
           </div>
         </WelcomeHero>
