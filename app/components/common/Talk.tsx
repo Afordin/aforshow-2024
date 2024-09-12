@@ -30,7 +30,7 @@ export const Talk = ({ title, author, timestamp, img, alt }: TalkProps) => {
           {author}
         </p>
       </footer>
-      <Tag className="min-h-10 min-w-16">{datetime}</Tag>
+      <Tag className="min-h-10 min-w-16">{datetime}h</Tag>
     </article>
   );
 };
