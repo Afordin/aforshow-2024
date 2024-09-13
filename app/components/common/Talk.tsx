@@ -1,15 +1,18 @@
 import Image from "next/image";
 import { Tag } from "./Tag";
+import { useTime } from "@/hooks/useTimezone";
 
 type TalkProps = {
   title: string;
   author: string;
-  hour: string;
+  timestamp: number;
   img: string;
   alt: string;
 };
 
-export const Talk = ({ title, author, hour, img, alt }: TalkProps) => {
+export const Talk = ({ title, author, timestamp, img, alt }: TalkProps) => {
+
+  const datetime = useTime({ timestamp });
   return (
     <article className="grid md:grid-cols-[auto_1fr] lg:grid-cols-[auto_1fr_auto] md:grid-rows-[repeat(2,auto)] lg:grid-rows-1 p-8 w-full gap-8 text-center md:text-left [&>*:last-child]:place-self-center">
       <Image
@@ -27,7 +30,7 @@ export const Talk = ({ title, author, hour, img, alt }: TalkProps) => {
           {author}
         </p>
       </footer>
-      <Tag>{hour}</Tag>
+      <Tag className="min-h-10 min-w-16">{datetime}h</Tag>
     </article>
   );
 };
