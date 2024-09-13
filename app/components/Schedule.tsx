@@ -11,10 +11,7 @@ export const Schedule = () => {
       </h2>
       <span className="flex justify-center my-12 text-sm">
         <Tag>
-          Zona horaria:{" "}
-          <span className="font-semibold">
-            {timezone}
-          </span>
+          Zona horaria: <span className="font-semibold">{timezone}</span>
         </Tag>
       </span>
       <div className="flex flex-col gap-16">
@@ -49,7 +46,7 @@ export const Schedule = () => {
         <Talk
           title="Top Tips para Deslumbrar en una Entrevista"
           author="Serudda"
-          timestamp={1726864200000}
+          timestamp={1726866000000}
           img="/imgs/speakers/speaker-1.png"
           alt="speaker 1 image: serudda"
         />
