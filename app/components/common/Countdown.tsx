@@ -1,12 +1,12 @@
 import { useEffect, useLayoutEffect, useState } from "react";
 import { cn } from "../utils";
+import { useTime } from "@/hooks/useTimezone";
 
 interface CountDownProps {
   className?: string;
-  startFrom?: Date;
 }
 
-export const Countdown = ({ className, startFrom }: CountDownProps) => {
+export const Countdown = ({ className }: CountDownProps) => {
   const time = [
     { key: "days", label: "Días" },
     { key: "hours", label: "Horas" },
@@ -14,6 +14,7 @@ export const Countdown = ({ className, startFrom }: CountDownProps) => {
     { key: "seconds", label: "Segundos" },
   ];
 
+  const startTime = useTime({ timestamp: 1726855200000});
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -23,7 +24,7 @@ export const Countdown = ({ className, startFrom }: CountDownProps) => {
 
   const updateCountdown = () => {
     // Establecer la fecha y hora de finalización (20 Septiembre 2024, 20:00 en UTC+2)
-    const countdownDate = startFrom || new Date("2024-09-20T18:00:00Z"); // UTC+2 es dos horas menos que UTC
+    const countdownDate =  new Date("2024-09-20T18:00:00Z"); // UTC+2 es dos horas menos que UTC
 
     const now = new Date();
 
@@ -65,7 +66,7 @@ export const Countdown = ({ className, startFrom }: CountDownProps) => {
           </section>
         ))}
       </div>
-      <p className="font-semibold">20 de Septiembre de 2024 a las 20:00</p>
+      <p className="font-semibold">20 de Septiembre de 2024 a las {startTime}</p>
     </div>
   );
 };
