@@ -32,7 +32,7 @@ export const WelcomeHero: FC<Props> = ({ variant, children }) => {
         </div>
 
         {/* Wrapper was moved to countdown because its component logic, could be override by className prop */}
-        <Countdown startFrom={new Date("2024-09-20")} />
+        <Countdown />
 
         <div className="flex gap-6 pb-12">
           {variant === "home" && (

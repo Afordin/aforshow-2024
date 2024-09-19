@@ -8,22 +8,10 @@ interface CountDownProps {
 
 export const Countdown = ({ className, startFrom }: CountDownProps) => {
   const time = [
-    {
-      key: "days",
-      label: "Días",
-    },
-    {
-      key: "hours",
-      label: "Horas",
-    },
-    {
-      key: "minutes",
-      label: "Minutos",
-    },
-    {
-      key: "seconds",
-      label: "Segundos",
-    },
+    { key: "days", label: "Días" },
+    { key: "hours", label: "Horas" },
+    { key: "minutes", label: "Minutos" },
+    { key: "seconds", label: "Segundos" },
   ];
 
   const [timeLeft, setTimeLeft] = useState({
@@ -34,7 +22,9 @@ export const Countdown = ({ className, startFrom }: CountDownProps) => {
   });
 
   const updateCountdown = () => {
-    const countdownDate = startFrom || new Date();
+    // Establecer la fecha y hora de finalización (20 Septiembre 2024, 20:00 en UTC+2)
+    const countdownDate = startFrom || new Date("2024-09-20T18:00:00Z"); // UTC+2 es dos horas menos que UTC
+
     const now = new Date();
 
     const timeDifference = countdownDate.getTime() - now.getTime();
@@ -52,9 +42,11 @@ export const Countdown = ({ className, startFrom }: CountDownProps) => {
   }, []);
 
   useEffect(() => {
-    setInterval(() => {
+    const intervalId = setInterval(() => {
       updateCountdown();
     }, 1000);
+
+    return () => clearInterval(intervalId); // Limpiar el intervalo al desmontar el componente
   }, []);
 
   const formatNumber = (number: number) => {
@@ -67,16 +59,13 @@ export const Countdown = ({ className, startFrom }: CountDownProps) => {
         {time.map(({ key, label }, index) => (
           <section key={index} className="text-center text-shadow-sm">
             <span className="font-bold text-3xl xl:text-6xl">
-              {formatNumber(timeLeft[key])}
+              {formatNumber(timeLeft[key as keyof typeof timeLeft])}
             </span>
             <p className="text-lg xl:text-2xl">{label}</p>
           </section>
         ))}
-
       </div>
-      <p className="font-semibold">
-        20 de Septiembre de 2024
-      </p>
+      <p className="font-semibold">20 de Septiembre de 2024 a las 20:00</p>
     </div>
   );
 };
