@@ -1,6 +1,7 @@
 import { useTimezone } from "@/hooks/useTimezone";
 import { Talk } from "./common/Talk";
 import { Tag } from "./common/Tag";
+import { Table } from "./common/Table";
 
 export const Schedule = () => {
   const timezone = useTimezone();
@@ -29,6 +30,11 @@ export const Schedule = () => {
           img="/imgs/speakers/speaker-4.jpeg"
           alt="speaker 4 image: Kevin Santiago Rey Rodriguez"
         />
+        <Table
+          title="Experiencias surrealistas en el trabajo"
+          authors="Rothio Tomé · Carmen Ansio · Irene Morgado"
+          timestamp={1726858800000}
+        />
         <Talk
           title="Mindset de Crecimiento para Programadores: Supera el Síndrome del Impostor y Aumenta tu Productividad"
           author="Karol Neiza"
@@ -42,6 +48,11 @@ export const Schedule = () => {
           timestamp={1726862400000}
           img="/imgs/speakers/speaker-3.jpg"
           alt="speaker 3 image: Kao Lo"
+        />
+        <Table
+          title="El futuro del desarrollo frontend"
+          authors="Girlazo · IkuroTime · odraciRdev"
+          timestamp={1726864200000}
         />
         <Talk
           title="Top Tips para Deslumbrar en una Entrevista"
