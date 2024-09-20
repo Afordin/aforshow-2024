@@ -16,7 +16,8 @@ You can demonstrate your talent by participating giving a talk.
 
 ## Screenshots
 
-![image](https://media.discordapp.net/attachments/1086813087014863049/1267964750017597480/readme-ticket.png?ex=66aab3b2&is=66a96232&hm=09337032551ec0bdd7102082c15e689ba1d4bc4fe0d908fc9bb47991e0bcc6aa&=&format=webp&quality=lossless&width=582&height=437)
+![image](https://github.com/user-attachments/assets/c4db8507-b178-4ace-92a0-a00dde346a3a)
+![image](https://github.com/user-attachments/assets/6d7e4535-64a4-48de-9a27-b32684cbe165)
 
 ## Getting started
 
