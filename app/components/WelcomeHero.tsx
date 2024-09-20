@@ -24,7 +24,7 @@ export const WelcomeHero: FC<Props> = ({ variant, children }) => {
               href="https://x.com/search?q=%23Aforshow" target="_blank"
               rel="noreferrer"
               className="inline-block bg-gradient-to-r from-caPrimary-500 to-caSecondary-500 text-transparent bg-clip-text">
-              #Aforshow
+              Aforshow
             </a>
             !
           </p>
