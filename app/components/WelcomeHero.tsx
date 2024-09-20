@@ -32,8 +32,9 @@ export const WelcomeHero: FC<Props> = ({ variant, children }) => {
         </div>
 
         {/* Wrapper was moved to countdown because its component logic, could be override by className prop */}
-        <Countdown />
-
+        {/* <Countdown /> */}
+        {/* iframe to twitch live */}
+        <iframe src={`https://player.twitch.tv/?channel=afor_digital&parent=afor.show`} frameBorder="0" width="500" height="320" allowFullScreen scrolling="no"></iframe>
         <div className="flex gap-6 pb-12">
           {variant === "home" && (
             <a href="#ticket">
