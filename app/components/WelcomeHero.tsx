@@ -23,7 +23,7 @@ export const WelcomeHero: FC<Props> = ({ variant, children }) => {
             <a
               href="https://x.com/search?q=%23Aforshow" target="_blank"
               rel="noreferrer"
-              className="inline-block bg-gradient-to-r from-caPrimary-500 to-caSecondary-500 text-transparent bg-clip-text">
+              className="inline-block bg-gradient-to-r from-caPrimary-500 to-caSecondary-500 text-transparent bg-clip-text font-[800]">
               Aforshow
             </a>
             !
