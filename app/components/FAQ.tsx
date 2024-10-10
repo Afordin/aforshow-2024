@@ -46,7 +46,7 @@ const questions = [
 export const FAQ = () => {
   return (
     <section>
-      <h2 className="mb-[4.5rem] text-center text-white text-[3.5rem] font-semibold">
+      <h2 className="mb-[4.5rem] text-center text-white text-5xl md:text-[3.5rem] font-semibold">
         Preguntas frecuentes
       </h2>
       <div className="flex flex-col items-center justify-center gap-4 w-4/5 md:w-3/5 m-auto">

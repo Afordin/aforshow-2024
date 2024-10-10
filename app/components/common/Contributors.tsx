@@ -28,7 +28,7 @@ export const Contributors = () => {
 
   return (
     <section className="text-center my-10">
-      <h4 className="text-3xl text-white">Contribuidores del desarrollo</h4>
+      <h4 className="text-2xl md:text-3xl text-white">Contribuidores del desarrollo</h4>
       <div className="mt-10">
         {contributors.length > 0 && (
           <div

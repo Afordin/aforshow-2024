@@ -45,7 +45,7 @@ export interface ButtonProps
 const Button = ({ className, variant, size, ...props }: ButtonProps) => {
   return (
     <button
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={cn(buttonVariants({ variant, size, className }), 'max-sm:text-sm')}
       {...props}
     />
   );

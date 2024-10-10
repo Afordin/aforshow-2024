@@ -7,7 +7,7 @@ export const Schedule = () => {
   const timezone = useTimezone();
   return (
     <section className="w-full mx-auto max-w-sm md:max-w-6xl">
-      <h2 className="text-center font-semibold text-[56px] text-hero ">
+      <h2 className="text-center font-semibold text-[56px] text-5xl sm:text-hero ">
         Horarios y charlas
       </h2>
       <span className="flex justify-center my-12 text-sm">

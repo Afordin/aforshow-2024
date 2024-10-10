@@ -39,7 +39,7 @@ export const Footer = () => {
       "max-w-7xl w-full mx-auto text-center mb-10 flex flex-col justify-between items-center"
     ),
     socialIcon: cn("inline-flex"),
-    copyRight: cn("text-sm mt-5 inset-x-0 bottom-2"),
+    copyRight: cn("text-sm mt-5 inset-x-0 bottom-2 text-center px-2"),
   };
 
   const renderSocialIcons = () =>
