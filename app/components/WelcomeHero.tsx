@@ -30,11 +30,13 @@ export const WelcomeHero: FC<Props> = ({ variant, children }) => {
           </p>
           {children}
         </div>
-        <div>
+        <div className="md:w-5/6 w-full px-3">
           <h2 className="text-caTextSecondary text-lg mb-3">
             Puedes ver la repetición del evento aquí:
           </h2>
-          <iframe src="https://player.twitch.tv/?video=2255968741&parent=afor.show" frameBorder="0" allowFullScreen scrolling="no" height="478" width="720"></iframe>
+          <div className="aspect-video w-full h-full">
+            <iframe src="https://player.twitch.tv/?video=2255968741&parent=afor.show"  frameBorder="0" allowFullScreen scrolling="no" height="100%" width="100%"></iframe>
+          </div>
         </div>
 
         <div className="flex gap-6 pb-12">
