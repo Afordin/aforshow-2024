@@ -49,7 +49,7 @@ export default function Home({
 
   return (
     <CursorsContextProvider room={room} host={host}>
-      <main className="font-dmSans">
+      <main className="font-dmSans overflow-x-hidden">
         <Cursors />
         <Hero />
         <section className="flex flex-col gap-[72px]">

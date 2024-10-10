@@ -62,7 +62,7 @@ export const TicketDownload = () => {
       id="ticket"
       className="w-full min-h-[600px] max-w-6xl items-center mx-auto flex gap-12 flex-col py-7"
     >
-      <p className="text-3xl font-semibold">
+      <p className="text-2xl md:text-3xl font-semibold text-center">
         Descarga tu ticket y compártelo en redes sociales
       </p>
       {user && (

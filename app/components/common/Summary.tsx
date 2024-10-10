@@ -22,7 +22,7 @@ export const Summary = ({
   return (
     <div className={cn("w-full group", className)}>
       <div
-        className="font-bold text-[1.75rem] text-white cursor-pointer relative flex items-center justify-between"
+        className="font-bold text-xl md:text-[1.75rem] text-white cursor-pointer relative flex items-center justify-between"
         onClick={toggleOpen}
       >
         {title}

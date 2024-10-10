@@ -34,7 +34,7 @@ export const Ticket = forwardRef<HTMLDivElement, TicketProps>(function Ticket(
             <div className="flex gap-5 items-center">
               <img
                 data-atropos-offset="2"
-                className="w-8 lg:w-16 sm:w-28 aspect-square rounded-full p-[0.1rem] bg-gradient-to-rb from-caPrimary-600 to-caSecondary-500"
+                className="w-8 lg:w-16 sm:w-28 overflow-hidden aspect-square rounded-full p-[0.1rem] bg-gradient-to-rb from-caPrimary-600 to-caSecondary-500"
                 src={avatar}
                 id="avatar"
                 alt={`Avatar de ${name}`}

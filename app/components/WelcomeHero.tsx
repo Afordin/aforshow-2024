@@ -18,19 +18,18 @@ export const WelcomeHero: FC<Props> = ({ variant, children }) => {
     >
       <div className="relative z-20 flex flex-col gap-10 items-center text-center">
         <div className="flex flex-col gap-2">
-          <p className="text-balance text-hero font-semibold lg:text-wrap">
-            ¡Gracias por estar presente en el
+          <p className="text-center md:text-balance text-5xl sm:text-hero font-semibold lg:text-wrap">
+            ¡Gracias por estar presente en el {' '}
             <a
               href="https://x.com/search?q=%23Aforshow" target="_blank"
               rel="noreferrer"
               className="inline-block bg-gradient-to-r from-caPrimary-500 to-caSecondary-500 text-transparent bg-clip-text font-[800]">
-              Aforshow
+              Aforshow!
             </a>
-            !
           </p>
           {children}
         </div>
-        <div className="md:w-5/6 w-full px-3">
+        <div className="md:w-5/6 w-full px-4">
           <h2 className="text-caTextSecondary text-lg mb-3">
             Puedes ver la repetición del evento aquí:
           </h2>

@@ -121,12 +121,6 @@ export const Nav = () => {
               </div>
             )}
           </div>
-          <Link
-            href="https://docs.google.com/forms/d/e/1FAIpQLSc-tddK0-eUZODZr8ErbFHkthVZdzQTyI-xDPRRFsZN76NGzw/viewform"
-            className="transition-all duration-300 hover:scale-105"
-          >
-            Votar charlas
-          </Link>
           {user ? (
             <div ref={trigger}>
               <button
@@ -139,7 +133,7 @@ export const Nav = () => {
                   alt="user avatar image"
                   width={40}
                   height={40}
-                  className="relative rounded-full border-2 border-caSecondary-500 hover:scale-105 cursor-pointer transition-all duration-300"
+                  className="relative overflow-hidden rounded-full border-2 border-caSecondary-500 hover:scale-105 cursor-pointer transition-all duration-300"
                 />
               </button>
               {isOpen && (
@@ -191,12 +185,7 @@ export const Nav = () => {
             : "max-h-0 opacity-0 overflow-hidden"
         }`}
       >
-        <Link
-          href="https://docs.google.com/forms/d/e/1FAIpQLSc-tddK0-eUZODZr8ErbFHkthVZdzQTyI-xDPRRFsZN76NGzw/viewform"
-          className="transition-all duration-300 hover:scale-105"
-        >
-          Votar charlas
-        </Link>
+       
         {user ? (
           <Button
             variant="secondary"
