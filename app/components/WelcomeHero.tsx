@@ -34,7 +34,7 @@ export const WelcomeHero: FC<Props> = ({ variant, children }) => {
             Puedes ver la repetición del evento aquí:
           </h2>
           <div className="aspect-video w-full h-full">
-            <iframe src="https://player.twitch.tv/?video=2255968741&parent=afor.show"  frameBorder="0" allowFullScreen scrolling="no" height="100%" width="100%"></iframe>
+            <iframe src="https://player.twitch.tv/?video=2256897068&parent=afor.show"  frameBorder="0" allowFullScreen scrolling="no" height="100%" width="100%"></iframe>
           </div>
         </div>
 
